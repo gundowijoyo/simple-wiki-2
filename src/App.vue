@@ -13,7 +13,7 @@
   <!-- main components -->
   <div class="min-h-screen flex flex-col justify-between">
     <!-- container -->
-    <div class="h-screen">
+    <div class="h-[1000vh]">
       <!-- navbar -->
       <Navbar></Navbar>
       <!-- end Navbar -->

@@ -1,17 +1,13 @@
 <!-- script -->
 <script setup>
   import { ref, onMounted } from "vue";
-
-  /* variable */
   const isScrolled = ref(false);
 
-  /* mounted */
-  onMounted(() => {
+  onMounted(async () => {
     window.addEventListener("scroll", () => {
       window.scrollY > 10
         ? (isScrolled.value = true)
         : (isScrolled.value = false);
-      console.log(isScrolled.value);
     });
   });
 </script>
@@ -19,8 +15,8 @@
 <!-- template -->
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 p-4 flex justify-between transition-colors duration-700"
-    :class="isScrolled ? 'bg-white' : 'bg-trasparent'"
+    class="fixed top-0 left-0 right-0 p-4 flex justify-between transition-all duration-700 z-[100]"
+    :class="isScrolled ? 'backdrop-blur' : 'bg-trasparent'"
   >
     <!-- container -->
     <div class="flex items-center gap-2">
@@ -31,7 +27,7 @@
 
     <!-- container -->
     <div class="">
-      <button class="text-2xl" type="button">
+      <button class="text-2xl text-slate-800" type="button">
         <i class="bi bi-list"></i>
       </button>
     </div>
