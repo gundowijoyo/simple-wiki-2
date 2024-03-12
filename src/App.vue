@@ -1,13 +1,15 @@
 <!-- script -->
 <script setup>
   import Navbar from "./components/Navbar.vue";
+  import Background from "./components/Background.vue";
 
-  import {RouterView} from "vue-router"
+  import { RouterView } from "vue-router";
 </script>
 
 <!-- template -->
 <template>
   <!-- utilities-->
+  <Background></Background>
   <!-- end utilities-->
 
   <!-- main components -->
@@ -17,7 +19,7 @@
       <!-- navbar -->
       <Navbar></Navbar>
       <!-- end Navbar -->
-      
+
       <!-- router view -->
       <RouterView></RouterView>
       <!-- end router view -->

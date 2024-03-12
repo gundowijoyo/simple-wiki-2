@@ -17,12 +17,13 @@
 <!-- template -->
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 p-4 h-16 flex justify-between transition-all duration-700 z-[100] bg-white"
+    class="fixed top-0 left-0 right-0 p-4 h-16 flex justify-between transition-all duration-700 z-[100]"
+    :class="isScrolled ? 'bg-white' : 'bg-transparent '"
   >
     <!-- container -->
     <div class="flex items-center gap-2">
       <img class="w-8 h-8 rounded-lg" src="/logo.png" alt="logo" />
-      <h1 class="text-slate-800 text-xl font-bold">Simple Wiki</h1>
+      <h1 class="text-slate-200 text-xl font-extrabold">Simple Wiki</h1>
     </div>
     <!-- end container -->
 
@@ -35,10 +36,7 @@
     >
       <!-- header -->
       <div class="flex items-center gap-4">
-        <h2 class="font-semibold text-zinc-800 px-2">{{ $route.name }}</h2>
-        <div
-          class="w-full h-1 bg-gradient-to-r from-violet-600 via-pink-600 to-blue-600 rounded-lg"
-        ></div>
+        <h2 class="font-semibold text-zinc-800 px-5">{{ $route.name }}</h2>
       </div>
       <!-- header -->
     </div>
@@ -51,7 +49,7 @@
         <Transition name="buttonTransition">
           <button
             @click="isNavSiderActive = !isNavSiderActive"
-            class="w-8 h-8 text-2xl text-slate-800 col-start-1 row-start-1"
+            class="w-8 h-8 text-2xl text-slate-200 col-start-1 row-start-1"
             v-if="!isNavSiderActive"
             type="button"
           >
@@ -59,7 +57,7 @@
           </button>
           <button
             @click="isNavSiderActive = !isNavSiderActive"
-            class="w-8 h-8 text-2xl text-slate-800 col-start-1 row-start-1"
+            class="w-8 h-8 text-2xl text-slate-200 col-start-1 row-start-1"
             v-else
             type="button"
           >

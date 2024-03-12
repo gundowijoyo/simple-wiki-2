@@ -1,7 +1,7 @@
 class Query {
   // private field url api
   #searchArticleUrl =
-    "https://en.wikipedia.org/w/api.php?origin=*&action=query&generator=search&exintro=&prop=extracts%7Cpageimages&pithumbsize=1000&format=json&gsrsearch=";
+    "https://id.wikipedia.org/w/api.php?origin=*&action=query&generator=search&exintro=&prop=extracts%7Cpageimages&pithumbsize=1480&format=json&gsrsearch=";
   // search method
   async search(query) {
     const responses = await fetch(this.#searchArticleUrl + query);
@@ -13,7 +13,7 @@ class Query {
       results.push(rawDatas.query.pages[key]);
     }
 
-    return results; 
+    return results;
   }
 }
 
