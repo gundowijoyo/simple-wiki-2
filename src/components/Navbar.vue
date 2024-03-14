@@ -18,12 +18,12 @@
 <template>
   <nav
     class="fixed top-0 left-0 right-0 p-4 h-16 flex justify-between transition-all duration-700 z-[100]"
-    :class="isScrolled ? 'bg-white' : 'bg-transparent '"
+    :class="isScrolled ? 'bg-[#080708]' : 'bg-transparent '"
   >
     <!-- container -->
     <div class="flex items-center gap-2">
       <img class="w-8 h-8 rounded-lg" src="/logo.png" alt="logo" />
-      <h1 class="text-slate-200 text-xl font-extrabold">Simple Wiki</h1>
+      <h1 class="text-xl font-extrabold text-slate-200">Simple Wiki</h1>
     </div>
     <!-- end container -->
 
@@ -45,11 +45,11 @@
     <!-- container -->
     <div class="">
       <!-- container button -->
-      <div class="grid grid-cols-1 grid-rows-1">
+      <div class="grid grid-cols-1 grid-rows-1 text-slate-200">
         <Transition name="buttonTransition">
           <button
             @click="isNavSiderActive = !isNavSiderActive"
-            class="w-8 h-8 text-2xl text-slate-200 col-start-1 row-start-1"
+            class="w-8 h-8 text-2xl col-start-1 row-start-1"
             v-if="!isNavSiderActive"
             type="button"
           >
@@ -57,7 +57,7 @@
           </button>
           <button
             @click="isNavSiderActive = !isNavSiderActive"
-            class="w-8 h-8 text-2xl text-slate-200 col-start-1 row-start-1"
+            class="w-8 h-8 text-2xl col-start-1 row-start-1"
             v-else
             type="button"
           >

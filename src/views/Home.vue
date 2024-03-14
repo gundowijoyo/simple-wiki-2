@@ -8,10 +8,10 @@
   <!-- main -->
   <main class="min-h-screen">
     <!-- header container -->
-    <div class="h-screen flex justify-center items-center">
+    <div class="h-screen pt-48">
       <!-- search section -->
       <section
-        class="w-[90%] h-[30rem] backdrop-blur-sm rounded-2xl p-4 bg-[rgba(0,0,0,0.4)]"
+        class="mx-auto w-[90%] h-[30rem] backdrop-blur-sm rounded-2xl p-4 bg-[rgba(0,0,0,0.4)]"
       >
         <h1 class="text-2xl font-bold text-slate-100">Hi, Welcome</h1>
 
@@ -24,6 +24,12 @@
         </p>
       </section>
       <!-- end search section -->
+
+      <div class="text-center mt-5">
+        <h2 class="text-slate-200 font-extrabold">
+          &copy;Arya Dewangga Puja | 2023
+        </h2>
+      </div>
     </div>
     <!-- end header container -->
   </main>

@@ -8,21 +8,30 @@
     const backgrounds = document.querySelectorAll(".background");
 
     // build transition animation
-    let counter = 5;
+    let counter = 5; // how many images can be transitioning
     let state = true;
+    let zIndexCounter = 1;
     const timeCounter = 5000;
 
     setInterval(() => {
-      if (state) {
-        backgrounds[counter].style.opacity = 0;
-      } else {
-        backgrounds[counter].style.opacity = 1;
+      if (backgrounds[counter]) {
+        if (state) {
+          backgrounds[counter].style.opacity = 0;
+        } else {
+          backgrounds[counter].style.opacity = 1;
+        }
+        console.log(counter);
       }
-      console.log(counter);
+
+      if (counter <= 1) state = false;
+      if (counter >= 6) {
+        state = true;
+        if (backgrounds[counter]) backgrounds[counter].style.opacity = 0;
+      }
 
       state ? counter-- : counter++;
+      zIndexCounter++;
     }, timeCounter);
-    setInterval(() => (state = !state), timeCounter * counter);
   });
 </script>
 
@@ -39,9 +48,15 @@
     />
   </div>
 
-  <div class="absolute top-0 right-0 left-0 w-screen h-screen">
+  <div class="absolute z-[-100] top-0 right-0 left-0 w-screen h-screen">
     <div
       class="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.9)] to-black"
+    ></div>
+  </div>
+
+  <div class="absolute z-[-100] top-0 right-0 left-0 w-screen h-screen">
+    <div
+      class="absolute top-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-transparent"
     ></div>
   </div>
 </template>
