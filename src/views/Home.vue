@@ -8,9 +8,10 @@
   <!-- main -->
   <main class="min-h-screen">
     <!-- header container -->
-    <div class="h-screen pt-48">
+    <section class="h-screen pt-48">
       <!-- search section -->
       <section
+        data-aos="fade-up"
         class="mx-auto w-[90%] h-[30rem] backdrop-blur-sm rounded-2xl p-4 bg-[rgba(0,0,0,0.4)]"
       >
         <h1 class="text-2xl font-bold text-slate-100">Hi, Welcome</h1>
@@ -24,14 +25,15 @@
         </p>
       </section>
       <!-- end search section -->
-
-      <div class="text-center mt-5">
-        <h2 class="text-slate-200 font-extrabold">
-          &copy;Arya Dewangga Puja | 2023
-        </h2>
-      </div>
-    </div>
+    </section>
     <!-- end header container -->
+
+    <!-- Main section -->
+    <section class="relative w-screen z-[-10] bg-white min-h-screen">
+      <div class="h-9 bg-black drop-shadow-lg">
+        <div class="text-center pt-5"></div>
+      </div>
+    </section>
   </main>
   <!-- end main -->
 </template>

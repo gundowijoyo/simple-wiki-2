@@ -14,13 +14,13 @@
     const timeCounter = 5000;
 
     setInterval(() => {
+      // background transition effect
       if (backgrounds[counter]) {
         if (state) {
           backgrounds[counter].style.opacity = 0;
         } else {
           backgrounds[counter].style.opacity = 1;
         }
-        console.log(counter);
       }
 
       if (counter <= 1) state = false;
@@ -50,7 +50,7 @@
 
   <div class="absolute z-[-100] top-0 right-0 left-0 w-screen h-screen">
     <div
-      class="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.9)] to-black"
+      class="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.7)] to-black"
     ></div>
   </div>
 

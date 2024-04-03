@@ -17,7 +17,7 @@
 <!-- template -->
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 p-4 h-16 flex justify-between transition-all duration-700 z-[100]"
+    class="fixed top-0 left-0 right-0 p-4 h-16 flex justify-between transition-all duration-700 z-[100] my-2 mx-3 rounded-lg"
     :class="isScrolled ? 'bg-[#080708]' : 'bg-transparent '"
   >
     <!-- container -->

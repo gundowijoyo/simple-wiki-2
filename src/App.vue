@@ -15,7 +15,7 @@
   <!-- main components -->
   <div class="min-h-screen flex flex-col justify-between">
     <!-- container -->
-    <div class="h-[1000vh]">
+    <div class="">
       <!-- navbar -->
       <Navbar></Navbar>
       <!-- end Navbar -->
@@ -27,7 +27,7 @@
     <!-- end container -->
 
     <!-- container -->
-    <div class="h-screen">footer</div>
+    <div class="">footer</div>
     <!-- end container -->
   </div>
   <!-- end main components-->
