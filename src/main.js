@@ -16,7 +16,11 @@ app.use(router);
 app.mount("#app");
 
 AOS.init({
-  easing: "ease-out-cubic",
+  easing: "ease-out-quad",
   duration: 700,
   delay: 400
 });
+
+window.onresize = () => {
+  AOS.refresh();
+};

@@ -4,6 +4,12 @@
 
   const isScrolled = ref(false);
   const isNavSiderActive = ref(false);
+  const scrollOrNavIsActive = ref(false);
+  const isOffset = ref(false);
+
+  /* offset state need global var for not reset in event listener */
+  let previousOffset;
+  let isOffsetMoreThan100vh = false;
 
   onMounted(async () => {
     window.addEventListener("scroll", () => {
@@ -11,62 +17,92 @@
         ? (isScrolled.value = true)
         : (isScrolled.value = false);
     });
+    // nav sider
+    const navElement = document.querySelector("nav");
+    setInterval(() => {
+      isScrolledOrIsNavSider();
+      if (isNavSiderActive.value) {
+        navElement.style.height = "60vh";
+      } else {
+        navElement.style.height = "64px";
+      }
+      // offset state
+      /* to evaluate whether this is scrolled up or down */
+      const offset = window.scrollY;
+      if (offset >= window.innerHeight && isOffsetMoreThan100vh == false) {
+        isOffsetMoreThan100vh = true;
+      }
+      if (offset == 0 && isOffsetMoreThan100vh == true) {
+        isOffsetMoreThan100vh = false;
+      }
+      if (!(previousOffset == offset)) {
+        if (previousOffset < offset && isOffsetMoreThan100vh) {
+          isOffset.value = true;
+          console.log("bawah");
+        } else {
+          isOffset.value = false;
+          console.log("atas");
+        }
+      }
+      if (isOffset.value) {
+        navElement.style.transform = "translateY(-100px)";
+      } else {
+        navElement.style.transform = "translateY(0px)";
+      }
+      console.log(isOffset.value);
+      previousOffset = offset;
+    }, 100);
   });
+
+  function isScrolledOrIsNavSider() {
+    if (isScrolled.value || isNavSiderActive.value) {
+      scrollOrNavIsActive.value = true;
+    } else {
+      scrollOrNavIsActive.value = false;
+    }
+  }
 </script>
+-->
 
 <!-- template -->
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 p-4 h-16 flex justify-between transition-all duration-700 z-[100] my-2 mx-3 rounded-lg"
-    :class="isScrolled ? 'bg-[#080708]' : 'bg-transparent '"
+    class="fixed top-0 left-0 right-0 p-4 transition-all duration-700 z-[100] my-2 mx-3 rounded-lg overflow-hidden"
+    :class="scrollOrNavIsActive ? 'bg-[#080708]' : 'bg-transparent'"
   >
-    <!-- container -->
-    <div class="flex items-center gap-2">
-      <img class="w-8 h-8 rounded-lg" src="/logo.png" alt="logo" />
-      <h1 class="text-xl font-extrabold text-slate-200">Simple Wiki</h1>
-    </div>
-    <!-- end container -->
-
-    <!-- container sider -->
-    <div
-      :class="
-        isNavSiderActive ? 'top-16 opacity-1' : 'top-[-25rem] opacity-[0.0]'
-      "
-      class="fixed left-0 right-0 m-3 min-h-[20rem] bg-white drop-shadow-xl rounded-xl transition-all duration-700 p-2"
-    >
-      <!-- header -->
-      <div class="flex items-center gap-4">
-        <h2 class="font-semibold text-zinc-800 px-5">{{ $route.name }}</h2>
+    <div class="flex justify-between w-full">
+      <!-- container -->
+      <div class="flex items-center gap-2">
+        <img class="w-8 h-8 rounded-lg" src="/logo.png" alt="logo" />
+        <h1 class="text-xl font-extrabold text-slate-200">Simple Wiki</h1>
       </div>
-      <!-- header -->
-    </div>
-    <!-- end container sider -->
-
-    <!-- container -->
-    <div class="">
-      <!-- container button -->
+      <!-- end container -->
+      <!-- container -->
       <div class="grid grid-cols-1 grid-rows-1 text-slate-200">
         <Transition name="buttonTransition">
           <button
+            v-if="!isNavSiderActive"
             @click="isNavSiderActive = !isNavSiderActive"
             class="w-8 h-8 text-2xl col-start-1 row-start-1"
-            v-if="!isNavSiderActive"
             type="button"
           >
             <i class="bi bi-list"></i>
           </button>
           <button
+            v-else
             @click="isNavSiderActive = !isNavSiderActive"
             class="w-8 h-8 text-2xl col-start-1 row-start-1"
-            v-else
             type="button"
           >
             <i class="bi bi-x"></i>
           </button>
         </Transition>
       </div>
+      <!-- end container -->
     </div>
-    <!-- end container -->
+    <!-- navigation section -->
+    <section class="w-full h-52 mt-10"></section>
+    <!-- end  navigation section -->
   </nav>
 </template>
 

@@ -11,7 +11,6 @@
   <!-- utilities-->
   <Background></Background>
   <!-- end utilities-->
-
   <!-- main components -->
   <div class="min-h-screen flex flex-col justify-between">
     <!-- container -->
@@ -19,15 +18,13 @@
       <!-- navbar -->
       <Navbar></Navbar>
       <!-- end Navbar -->
-
       <!-- router view -->
       <RouterView></RouterView>
       <!-- end router view -->
     </div>
     <!-- end container -->
-
     <!-- container -->
-    <div class="">footer</div>
+    <div class="min-h-screen">footer</div>
     <!-- end container -->
   </div>
   <!-- end main components-->
