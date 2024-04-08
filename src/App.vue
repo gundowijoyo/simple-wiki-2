@@ -27,7 +27,7 @@
     </div>
     <!-- end container -->
     <!-- container -->
-    <div class="min-h-screen">footer</div>
+    <div class="">footer</div>
     <!-- end container -->
   </div>
   <!-- end main components-->

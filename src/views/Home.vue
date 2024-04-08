@@ -2,11 +2,15 @@
 <script setup>
   import Background from "../components/Background.vue";
   import InputSearch from "../components/InputSearch.vue";
+  import SimpleIcon from "../components/icons/Simple.vue";
+  import AccesableIcon from "../components/icons/Accesable.vue";
+  import ContactIcon from "../components/icons/Contact.vue";
 
   import { onMounted } from "vue";
   import Typed from "typed.js";
 
   onMounted(() => {
+    /* tyoed js */
     const h1Typed1 = new Typed("#typed-1", {
       strings: ["Simple Wiki", "Is", "Simple", "and", "is Awesome"],
       typeSpeed: 80,
@@ -72,7 +76,7 @@
         </div>
       </section>
       <section role="about" id="about" class="w-full h-fit p-5">
-        <div class="mt-20 text-right">
+        <div class="w-full mt-20 text-right">
           <h1
             data-aos="fade-right"
             data-aos-delay="50"
@@ -84,6 +88,65 @@
             Secara Singkat Simple Wiki adalah project sederhana yang
             mengintregasikan API dari Wikipedia dan Mediawiki. Setidaknya ini
             menambah protfolio :)
+          </p>
+        </div>
+        <div class="w-full h-52">
+          <div
+            data-aos="fade-up"
+            class="mt-20 mb-3 flex flex-col items-center justify-center"
+          >
+            <SimpleIcon class="w-20 h-20 drop-shadow-lg"></SimpleIcon>
+            <h1 class="text-xl font-bold">Simple</h1>
+          </div>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-sm tracking-wide text-center"
+          >
+            Lorem ipsum quis sint veniam labore mollit sit nostrud fugiat mollit
+            eiusmod velit laborum sunt esse sit esse consequat duis pariatur
+            tempor sint incididunt laboris excepteur veniam velit sint
+            incididunt.
+          </p>
+        </div>
+        <div class="w-full h-52">
+          <div
+            data-aos="fade-up"
+            class="mt-20 mb-3 flex flex-col items-center justify-center"
+          >
+            <AccesableIcon class="w-20 h-20 drop-shadow-lg"></AccesableIcon>
+            <h1 class="text-xl font-bold">Accesable</h1>
+          </div>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-sm tracking-wide text-center"
+          >
+            Lorem ipsum quis sint veniam labore mollit sit nostrud fugiat mollit
+            eiusmod velit laborum sunt esse sit esse consequat duis pariatur
+            tempor sint incididunt laboris excepteur veniam velit sint
+            incididunt.
+          </p>
+        </div>
+        <div class="w-full h-52">
+          <div
+            data-aos="fade-up"
+            class="mt-20 mb-3 flex flex-col items-center justify-center"
+          >
+            <ContactIcon class="w-20 h-20 drop-shadow-lg"></ContactIcon>
+            <h1 class="text-xl font-bold">Contact</h1>
+          </div>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-sm tracking-wide text-center"
+          >
+            Jika kau memiliki ususan dengan pengembang hubungi
+            <a
+              href="mailto:aryadewanggapuja@gmail.com"
+              class="text-blue-800 underline cursor-pointer"
+              >aryadewanggapuja@gmail.com</a
+            >
           </p>
         </div>
       </section>

@@ -1,8 +1,17 @@
 <!-- script -->
 <script setup>
   import { useRoute } from "vue-router";
+  import { queryByPageId } from "../api/index.js";
+  import { ref, onMounted } from "vue";
 
   const route = useRoute();
+
+  onMounted(async () => {
+    const response = await fetch(queryByPageId + route.query.pageid);
+    const rawData = await response.json();
+    
+    console.log(rawData)
+  });
 </script>
 
 <!-- template -->
