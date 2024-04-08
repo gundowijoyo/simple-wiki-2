@@ -29,27 +29,26 @@
       // offset state
       /* to evaluate whether this is scrolled up or down */
       const offset = window.scrollY;
-      if (offset >= window.innerHeight && isOffsetMoreThan100vh == false) {
-        isOffsetMoreThan100vh = true;
-      }
-      if (offset == 0 && isOffsetMoreThan100vh == true) {
-        isOffsetMoreThan100vh = false;
-      }
-      if (!(previousOffset == offset)) {
-        if (previousOffset < offset && isOffsetMoreThan100vh) {
-          isOffset.value = true;
-          console.log("bawah");
+      if (!isNavSiderActive.value) {
+        if (offset >= window.innerHeight && isOffsetMoreThan100vh == false) {
+          isOffsetMoreThan100vh = true;
+        }
+        if (offset == 0 && isOffsetMoreThan100vh == true) {
+          isOffsetMoreThan100vh = false;
+        }
+        if (!(previousOffset == offset)) {
+          if (previousOffset < offset && isOffsetMoreThan100vh) {
+            isOffset.value = true;
+          } else {
+            isOffset.value = false;
+          }
+        }
+        if (isOffset.value) {
+          navElement.style.transform = "translateY(-100px)";
         } else {
-          isOffset.value = false;
-          console.log("atas");
+          navElement.style.transform = "translateY(0px)";
         }
       }
-      if (isOffset.value) {
-        navElement.style.transform = "translateY(-100px)";
-      } else {
-        navElement.style.transform = "translateY(0px)";
-      }
-      console.log(isOffset.value);
       previousOffset = offset;
     }, 100);
   });
@@ -74,7 +73,9 @@
       <!-- container -->
       <div class="flex items-center gap-2">
         <img class="w-8 h-8 rounded-lg" src="/logo.png" alt="logo" />
-        <h1 class="text-xl font-extrabold text-slate-200">Simple Wiki</h1>
+        <h1 class="text-xl font-extrabold text-slate-200 tracking-wider">
+          Simple Wiki
+        </h1>
       </div>
       <!-- end container -->
       <!-- container -->
@@ -101,7 +102,10 @@
       <!-- end container -->
     </div>
     <!-- navigation section -->
-    <section class="w-full h-52 mt-10"></section>
+    <section class="w-full h-52 mt-10 text-zinc-100">
+      {{ $route.name }}
+      <section v-if="$route.name == 'Home'" class="">hahahahha</section>
+    </section>
     <!-- end  navigation section -->
   </nav>
 </template>

@@ -17,8 +17,9 @@ app.mount("#app");
 
 AOS.init({
   easing: "ease-out-quad",
-  duration: 700,
-  delay: 400
+  duration: 850,
+  delay: 0,
+  once: true
 });
 
 window.onresize = () => {
