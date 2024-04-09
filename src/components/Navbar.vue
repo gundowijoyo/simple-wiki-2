@@ -1,6 +1,9 @@
 <!-- script -->
 <script setup>
   import { ref, onMounted } from "vue";
+  import { useRoute } from "vue-router";
+
+  const route = useRoute();
 
   const isScrolled = ref(false);
   const isNavSiderActive = ref(false);
@@ -54,7 +57,7 @@
   });
 
   function isScrolledOrIsNavSider() {
-    if (isScrolled.value || isNavSiderActive.value) {
+    if (isScrolled.value || isNavSiderActive.value || route.name == "search") {
       scrollOrNavIsActive.value = true;
     } else {
       scrollOrNavIsActive.value = false;

@@ -1,33 +1,38 @@
 <!-- script -->
 <script setup>
+  import AnimatedSquareBackground from "../components/AnimatedSquareBackground.vue";
+
   import { useRoute } from "vue-router";
   import { queryByPageId } from "../api/index.js";
   import { ref, onMounted } from "vue";
 
   const route = useRoute();
+  const data = ref({});
 
   onMounted(async () => {
     const response = await fetch(queryByPageId + route.query.pageid);
     const rawData = await response.json();
-    
-    console.log(rawData)
+
+    console.log(rawData.query.pages[route.query.pageid]);
+    data.value = rawData.query.pages[route.query.pageid];
   });
 </script>
 
 <!-- template -->
 <template>
-  <main class="col-start-1 row-start-1">
-    <h1>Lmao</h1>
-    Cupidatat labore culpa amet dolore et irure commodo pariatur. Qui sit magna
-    non sunt quis labore occaecat nostrud culpa occaecat sit officia. Labore
-    veniam aliquip aliquip irure quis adipisicing. Lorem amet esse non nisi
-    veniam veniam aliqua ex non commodo esse id occaecat. Consequat culpa cillum
-    pariatur ipsum Lorem consequat ea dolor. Reprehenderit magna reprehenderit
-    laborum do culpa commodo nulla eiusmod aliquip et fugiat enim veniam duis.
-    Consequat labore consequat in ea. Laborum velit sint mollit dolore est
-    nostrud magna id eiusmod. Adipisicing eiusmod non duis ex aliqua Lorem aute.
-    Ut consectetur dolore ad excepteur duis tempor elit amet nostrud
-    reprehenderit tempor nisi sint duis. {{ route.query }}
+  <main class="col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
+    <!-- utils -->
+    <AnimatedSquareBackground></AnimatedSquareBackground>
+    <!-- end utils -->
+    <!-- main -->
+    <section role="main" class="min-w-[100vw] max-w-[100vw]">
+      <article
+        class="mt-36 h-[70vh] w-[90vw] mx-auto bg-amber-100 text-sm p-2 rounded-lg overflow-scroll border-y-4 bg-[rgba(133,77,14,0.7)] backdrop-blur-sm"
+      >
+        <div v-html="data.extract" class=""></div>
+      </article>
+    </section>
+    <!-- end main -->
   </main>
 </template>
 
