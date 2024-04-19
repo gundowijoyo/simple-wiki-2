@@ -70,7 +70,7 @@
 <template>
   <nav
     class="fixed top-0 left-0 right-0 p-4 transition-all duration-700 z-[100] my-2 mx-3 rounded-lg overflow-hidden"
-    :class="scrollOrNavIsActive ? 'bg-[#080708]' : 'bg-transparent'"
+    :class="scrollOrNavIsActive ? 'bg-zinc-900' : 'bg-transparent'"
   >
     <div class="flex justify-between w-full">
       <!-- container -->
@@ -107,7 +107,7 @@
     <!-- navigation section -->
     <section class="w-full h-52 mt-10 text-zinc-100">
       {{ $route.name }}
-      <section v-if="$route.name == 'Home'" class="">hahahahha</section>
+      <section v-if="$route.name == 'home'" class="">hahahahha</section>
     </section>
     <!-- end  navigation section -->
   </nav>
@@ -122,27 +122,11 @@
 
   .buttonTransition-enter-from {
     opacity: 0;
-    transform: scale(0.1);
+    transform: scale(0.1) rotate(0deg);
   }
 
   .buttonTransition-leave-to {
     opacity: 0;
-    transform: scale(2);
-  }
-
-  .gradient-bg {
-    background-size: 400% 400%;
-    animation: gradient-bg 20s ease infinite;
-  }
-  @keyframes gradient-bg {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    transform: scale(2) rotate(180deg);
   }
 </style>
