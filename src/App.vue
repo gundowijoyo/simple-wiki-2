@@ -1,5 +1,6 @@
 <!-- script -->
 <script setup>
+  import Background from "./components/Background.vue";
   import Navbar from "./components/Navbar.vue";
   import { RouterView } from "vue-router";
 </script>
@@ -7,6 +8,7 @@
 <!-- template -->
 <template>
   <!-- utilities-->
+  <Background></Background>
   <!-- end utilities-->
   <!-- main components -->
   <div class="min-h-screen flex flex-col justify-between">

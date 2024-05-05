@@ -1,16 +1,12 @@
 <!-- script -->
 <script setup>
   import { ref, onMounted } from "vue";
-  import { useRoute } from "vue-router";
 
-  const route = useRoute();
-
-  const isScrolled = ref(false);
   const isNavSiderActive = ref(false);
-  const scrollOrNavIsActive = ref(false);
-  const isOffset = ref(false);
 
-  /* offset state need global var for not reset in event listener */
+  /*
+   * Offset state need global var for not reset in event listener
+   *
   let previousOffset;
   let isOffsetMoreThan100vh = false;
 
@@ -30,10 +26,12 @@
         navElement.style.height = "64px";
       }
       // offset state
-      /* to evaluate whether this is scrolled up or down */
       const offset = window.scrollY;
       if (!isNavSiderActive.value) {
-        if (offset >= window.innerHeight && isOffsetMoreThan100vh == false) {
+        if (
+          offset >= window.innerHeight / 2 &&
+          isOffsetMoreThan100vh == false
+        ) {
           isOffsetMoreThan100vh = true;
         }
         if (offset == 0 && isOffsetMoreThan100vh == true) {
@@ -55,7 +53,7 @@
       previousOffset = offset;
     }, 100);
   });
-
+  
   function isScrolledOrIsNavSider() {
     if (isScrolled.value || isNavSiderActive.value || route.name == "search") {
       scrollOrNavIsActive.value = true;
@@ -63,24 +61,20 @@
       scrollOrNavIsActive.value = false;
     }
   }
+  */
 </script>
 -->
 
 <!-- template -->
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 p-4 transition-all duration-700 z-[100] my-2 mx-3 rounded-lg overflow-hidden"
-    :class="scrollOrNavIsActive ? 'bg-zinc-900' : 'bg-transparent'"
+    class="absolute top-0 left-0 right-0 p-4 transition-all duration-700 z-[100] mt-1 mx-2 rounded-xl overflow-hidden"
+    :class="isNavSiderActive ? 'bg-zinc-900' : 'bg-transparent'"
   >
     <div class="flex justify-between w-full">
-      <!-- container -->
-      <div class="flex items-center gap-2">
-        <img class="w-8 h-8 rounded-lg" src="/logo.png" alt="logo" />
-        <h1 class="text-xl font-extrabold text-slate-200 tracking-wider">
-          Simple Wiki
-        </h1>
-      </div>
-      <!-- end container -->
+      <!-- navigation section -->
+      <section class="" :class="isNavSiderActive? 'opacity-1':'opacity-0'">hello</section>
+      <!-- end navigation section -->
       <!-- container -->
       <div class="grid grid-cols-1 grid-rows-1 text-slate-200">
         <Transition name="buttonTransition">
@@ -104,12 +98,6 @@
       </div>
       <!-- end container -->
     </div>
-    <!-- navigation section -->
-    <section class="w-full h-52 mt-10 text-zinc-100">
-      {{ $route.name }}
-      <section v-if="$route.name == 'home'" class="">hahahahha</section>
-    </section>
-    <!-- end  navigation section -->
   </nav>
 </template>
 

@@ -1,7 +1,5 @@
 <!-- script -->
 <script setup>
-  import AnimatedSquareBackground from "../components/AnimatedSquareBackground.vue";
-
   import { useRoute } from "vue-router";
   import { queryByPageId } from "../api/index.js";
   import { ref, onMounted } from "vue";
@@ -21,9 +19,6 @@
 <!-- template -->
 <template>
   <main class="col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
-    <!-- utils -->
-    <AnimatedSquareBackground></AnimatedSquareBackground>
-    <!-- end utils -->
     <!-- main -->
     <section role="main" class="min-w-[100vw] max-w-[100vw]">
       <article

@@ -95,7 +95,7 @@
       <Transition name="sv">
         <div
           v-if="data.length > 0"
-          class="w-full absolute rounded-lg top-12 bg-zinc-800 overflow-hidden"
+          class="w-full absolute rounded-lg top-12 overflow-hidden"
         >
           <section v-for="(info, index) in data" class="">
             <RouterLink
