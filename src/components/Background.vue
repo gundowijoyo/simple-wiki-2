@@ -6,8 +6,11 @@
   onMounted(function () {
     // get all element of images background
     const backgrounds = document.querySelectorAll(".background");
+
     // build transition animation
-    let counter = 5; // how many images can be transitioning
+    // how many images can be transitioning
+    let counter = 3;
+
     let state = true;
     let zIndexCounter = 1;
     const timeCounter = 5000;
@@ -21,7 +24,7 @@
         }
       }
       if (counter <= 1) state = false;
-      if (counter >= 6) {
+      if (counter >= 4) {
         state = true;
         if (backgrounds[counter]) backgrounds[counter].style.opacity = 0;
       }
