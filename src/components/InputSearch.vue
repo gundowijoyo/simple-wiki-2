@@ -19,13 +19,13 @@
       try {
         // for canceling request
         const controller = new AbortController();
-        // Obtain a reference to the AbortSignal
         const signal = controller.signal;
-        // fetching the request
+
         const response = await fetch(searchArticleUrl + inputValue.value, {
           signal
         });
         const rawDatas = await response.json();
+        
         // filltering output data
         const fillterData = [];
         for (let key in rawDatas.query.pages) {
@@ -34,6 +34,7 @@
             fillterData.push(rawDatas.query.pages[key]);
           }
         }
+        
         // input = "" abort
         if (inputValue.value.length <= 0) controller.abort();
         data.value = fillterData;
@@ -83,7 +84,7 @@
         type="text"
         value=""
         @keyup="searchRequest"
-        placeholder="Search anything you want to search..."
+        placeholder="Search articles here ..."
       />
       <!-- end main input -->
       <div class="absolute right-3 text-zinc-300">
@@ -112,13 +113,13 @@
               <div class="">
                 <img
                   v-if="info.thumbnail"
-                  class="w-10 h-10 rounded-md"
+                  class="w-14 h-10 rounded-md"
                   :src="info.thumbnail.source"
                   alt="info.title"
                 />
                 <img
                   v-if="!info.thumbnail"
-                  class="w-10 h-10 rounded-md"
+                  class="w-14 h-10 rounded-md"
                   src="/imageNotFound.png"
                   alt=""
                 />

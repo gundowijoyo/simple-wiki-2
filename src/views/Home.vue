@@ -17,14 +17,26 @@
         <!-- search section -->
         <section class="mx-auto w-[90%] h-[20rem] rounded-2xl p-4">
           <div
-            class="gradient-animated w-full mt-10 h-fit bg-clip-text text-transparent flex justify-between"
+            class="w-full mt-10 h-fit p-2 text-transparent flex justify-between rounded-lg bg-[hsla(222,47.4%,11.2%,0.4)] backdrop-blur"
           >
             <div class="">
-              <h1 class="font-black text-3xl tracking-wider">Simplified</h1>
-              <h1 class="font-black text-3xl tracking-wider">Wikipedia,</h1>
+              <h1 class="text-slate-50 font-black text-2xl tracking-wider">
+                Simplified
+              </h1>
+              <h1
+                class="gradient-animated text-slate-50 font-black text-2xl tracking-wider"
+              >
+                <span class="text-transparent">Wiki</span>pedia<span
+                  class="text-slate-600"
+                  >,</span
+                >
+              </h1>
             </div>
-            <div class="flex items-end">
-              <i class="bi bi-discord text-2xl"></i>
+            <div class="flex items-end gap-2">
+              <img class="w-6 h-6 rounded-lg" src="/logo.png" alt="" />
+              <i
+                class="w-6 h-6 flex items-center justify-center bi bi-github text-gray-300 text-2xl"
+              ></i>
             </div>
           </div>
           <!-- search input -->

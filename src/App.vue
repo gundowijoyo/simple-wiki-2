@@ -1,7 +1,6 @@
 <!-- script -->
 <script setup>
   import Background from "./components/Background.vue";
-  import Navbar from "./components/Navbar.vue";
   import { RouterView } from "vue-router";
 </script>
 
@@ -14,9 +13,6 @@
   <div class="min-h-screen flex flex-col justify-between">
     <!-- container -->
     <div class="">
-      <!-- navbar -->
-      <Navbar></Navbar>
-      <!-- end Navbar -->
       <!-- router view -->
       <section class="grid grid-cols-1 grid-rows-1">
         <RouterView v-slot="{ Component }">
