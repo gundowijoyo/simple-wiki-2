@@ -2,8 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,html}"],
   theme: {
-    extend: {},
+    extend: {
+      
+    }
   },
-  plugins: [],
-}
-
+  plugins: []
+};

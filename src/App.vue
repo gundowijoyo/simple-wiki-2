@@ -25,7 +25,7 @@
     </div>
     <!-- end container -->
     <!-- container -->
-    <div class="">footer</div>
+    <div class="mt-28 bg-slate-200 h-screen">footer</div>
     <!-- end container -->
   </div>
   <!-- end main components-->

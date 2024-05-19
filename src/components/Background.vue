@@ -55,7 +55,7 @@
     class="absolute z-[-100] top-1 right-0 left-0 w-screen h-screen md:h-[800px]"
   >
     <div
-      class="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.05)] via-[rgba(0, 0,0,0.2)] to-gray-900"
+      class="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.05)] via-[rgba(0, 0,0,0.2)] to-[hsl(240,5.9%,3.21%)]"
     ></div>
   </div>
 

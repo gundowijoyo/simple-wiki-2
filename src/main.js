@@ -19,7 +19,7 @@ AOS.init({
   easing: "ease-out-quad",
   duration: 850,
   delay: 0,
-  once: true
+  once: false
 });
 
 window.onresize = () => {

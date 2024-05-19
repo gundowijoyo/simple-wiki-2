@@ -14,6 +14,7 @@
   function searchRequest() {
     isLoad.value = true;
     data.value = [];
+
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(async function () {
       try {
@@ -25,7 +26,7 @@
           signal
         });
         const rawDatas = await response.json();
-        
+
         // filltering output data
         const fillterData = [];
         for (let key in rawDatas.query.pages) {
@@ -34,7 +35,7 @@
             fillterData.push(rawDatas.query.pages[key]);
           }
         }
-        
+
         // input = "" abort
         if (inputValue.value.length <= 0) controller.abort();
         data.value = fillterData;
@@ -54,7 +55,7 @@
     for (let i = 0; i < 15; i++) {
       resultArray.push(textArray[i]);
     }
-    return resultArray.join(" ");
+    return resultArray.join(" ").replace(/<p/g, "<p class='inline'");
   }
 </script>
 
@@ -80,14 +81,14 @@
       <!-- main input -->
       <input
         v-model="inputValue"
-        class="h-10 text-xs w-full p-2 outline-none rounded-md bg-slate-100 tracking-wide cursor-text"
+        class="h-10 text-xs w-full p-2 outline-none rounded-md bg-slate-100 tracking-wide cursor-text shadow-md"
         type="text"
         value=""
         @keyup="searchRequest"
         placeholder="Search articles here ..."
       />
       <!-- end main input -->
-      <div class="absolute right-3 text-zinc-300">
+      <div class="absolute top-2 right-3 text-zinc-300">
         <i v-if="!isLoad" class="bi bi-search relative text-[20px]"></i>
         <i v-else class="bi bi-search relative text-[20px] pulse"></i>
       </div>
@@ -96,14 +97,12 @@
       <Transition name="sv">
         <div
           v-if="data.length > 0"
-          class="w-full absolute rounded-lg top-12 overflow-hidden"
+          class="w-full absolute rounded-lg top-12 overflow-hidden z-50"
         >
           <section v-for="(info, index) in data" class="">
-            <RouterLink
-              :to="{
-                path: '/search',
-                query: { title: info.title, pageid: info.pageid }
-              }"
+            <!-- router link -->
+            <a
+              :href="'page?id=' + info.pageid"
               class="flex justify-between items-center gap-3 px-2 py-1 border-y border-zinc-800 rounded-md bg-slate-100 hover:bg-slate-200 cursor-pointer"
               :class="{
                 'border-t-0 rounded-t-0': index == 0,
@@ -134,7 +133,8 @@
                   <span>...</span>
                 </div>
               </div>
-            </RouterLink>
+            </a>
+            <!-- router link -->
           </section>
         </div>
       </Transition>

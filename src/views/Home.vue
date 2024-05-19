@@ -1,8 +1,21 @@
 <!-- script -->
 <script setup>
-  import InputSearch from "../components/InputSearch.vue";
-
   import Typed from "typed.js";
+  import InputSearch from "../components/InputSearch.vue";
+  import { onMounted } from "vue";
+
+  onMounted(() => {
+    const text = [
+      "<span class='text-blue-600'>1%</span> Lebih baik dari kemarin."
+    ];
+    const typed = new Typed("#typed-1", {
+      strings: text,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 1000,
+      loop: true
+    });
+  });
 </script>
 
 <!-- template -->
@@ -17,19 +30,17 @@
         <!-- search section -->
         <section class="mx-auto w-[90%] h-[20rem] rounded-2xl p-4">
           <div
-            class="w-full mt-10 h-fit p-2 text-transparent flex justify-between rounded-lg bg-[hsla(222,47.4%,11.2%,0.4)] backdrop-blur"
+            class="w-full mt-10 h-fit p-2 text-transparent flex justify-between rounded-lg bg-[hsla(240,5.9%,7.8%,0.5)] backdrop-blur"
           >
-            <div class="">
-              <h1 class="text-slate-50 font-black text-2xl tracking-wider">
+            <div class="text-2xl">
+              <h1 class="text-slate-50 font-black red-hat tracking-wider">
                 Simplified
               </h1>
               <h1
-                class="gradient-animated text-slate-50 font-black text-2xl tracking-wider"
+                class="gradient-animated text-slate-50 font-black red-hat tracking-wider"
               >
-                <span class="text-transparent">Wiki</span>pedia<span
-                  class="text-slate-600"
-                  >,</span
-                >
+                <span class="text-transparent tracking-tighter">Wiki</span
+                >pedia<span class="text-slate-600">,</span>
               </h1>
             </div>
             <div class="flex items-end gap-2">
@@ -44,8 +55,19 @@
           <!-- end search input -->
         </section>
         <!-- end search section -->
+        <!-- kata-kata :v -->
+        <section class="absolute bottom-1/3 mx-auto w-full h-20">
+          <div class="w-[90%] px-5 h-full mx-auto">
+            <h3
+              id="typed-1"
+              class="text-slate-100 font-bold text-xl drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)] tracking-tight opacity-90"
+            ></h3>
+          </div>
+        </section>
+        <!-- end kata-kata  -->
       </div>
       <!-- end header container -->
+
       <!-- main section -->
       <section role="main section" class=""></section>
       <!-- end main section -->
