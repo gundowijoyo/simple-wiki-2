@@ -15,6 +15,7 @@
 /* global */
 * {
   font-family: "Karla", Sans-Serif;
+  scroll-padding-top: 10rem;
 }
 .red-hat {
   font-family: "Red Hat Display", Sans-Serif;

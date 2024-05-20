@@ -44,6 +44,15 @@
       /<dl/g,
       "<dl data-aos='fade-up' data-aos-delay='100' "
     );
+
+    // Use regex to find all id attributes in span
+    const regex = /<span id="(\w+)"/g;
+    const matches = buffer.matchAll(regex);
+    const ids = [...matches].map(m => m[1]);
+    ids.unshift("pengenalan");
+
+    console.log(ids);
+
     return buffer;
   }
 </script>
@@ -54,6 +63,7 @@
     <!-- main -->
     <section role="main" class="min-w-[100vw] max-w-[100vw]">
       <InputSearch></InputSearch>
+      <a class="" href="#Sejarah">sejarah</a>
       <article
         class="mt-36 w-[98vw] h-fit mx-auto text-sm p-2 rounded-lg overflow-hidden p-2 bg-[hsla(210,40%,96.1%,0.0)]"
       >

@@ -26,35 +26,22 @@
     <!-- main -->
     <section role="main header" class="">
       <!-- header container -->
-      <div class="h-screen pt-10 md:h-[800px]">
-        <!-- search section -->
+      <header class="h-screen md:h-[800px]">
+        <!-- nav -->
+        <nav class="w-full h-20 px-4 flex justify-between items-center">
+          <h3 class="text-2xl font-black text-slate-100 tracking-tighter">
+            Simple<span
+              class="mix-blend-screen bg-slate-100 px-1 mx-1 rounded-md"
+              ><span class="mix-blend-difference text-xl">Wiki</span></span
+            >
+          </h3>
+        </nav>
+        <!-- end nav -->
+        <!-- search element -->
         <section class="mx-auto w-[90%] h-[20rem] rounded-2xl p-4">
-          <div
-            class="w-full mt-10 h-fit p-2 text-transparent flex justify-between rounded-lg bg-[hsla(240,5.9%,7.8%,0.5)] backdrop-blur"
-          >
-            <div class="text-2xl">
-              <h1 class="text-slate-50 font-black red-hat tracking-wider">
-                Simplified
-              </h1>
-              <h1
-                class="gradient-animated text-slate-50 font-black red-hat tracking-wider"
-              >
-                <span class="text-transparent tracking-tighter">Wiki</span
-                >pedia<span class="text-slate-600">,</span>
-              </h1>
-            </div>
-            <div class="flex items-end gap-2">
-              <img class="w-6 h-6 rounded-lg" src="/logo.png" alt="" />
-              <i
-                class="w-6 h-6 flex items-center justify-center bi bi-github text-gray-300 text-2xl"
-              ></i>
-            </div>
-          </div>
-          <!-- search input -->
           <InputSearch></InputSearch>
-          <!-- end search input -->
         </section>
-        <!-- end search section -->
+        <!-- end search element -->
         <!-- kata-kata :v -->
         <section class="absolute bottom-1/3 mx-auto w-full h-20">
           <div class="w-[90%] px-5 h-full mx-auto">
@@ -65,7 +52,7 @@
           </div>
         </section>
         <!-- end kata-kata  -->
-      </div>
+      </header>
       <!-- end header container -->
 
       <!-- main section -->
