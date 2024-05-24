@@ -1,13 +1,25 @@
 <!-- script -->
 <script setup>
   import Background from "./components/Background.vue";
+  import LoadingContainer from "./components/LoadingContainer.vue";
+  import { ref, onMounted } from "vue";
   import { RouterView } from "vue-router";
+
+  const isDomLoaded = ref(false);
+  onMounted(() => {
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        isDomLoaded.value = true;
+      }, 1000);
+    });
+  });
 </script>
 
 <!-- template -->
 <template>
   <!-- utilities-->
   <Background></Background>
+  <LoadingContainer :isDomLoaded="isDomLoaded"></LoadingContainer>
   <!-- end utilities-->
   <!-- main components -->
   <div class="min-h-screen flex flex-col justify-between">
@@ -16,9 +28,7 @@
       <!-- router view -->
       <section class="grid grid-cols-1 grid-rows-1">
         <RouterView v-slot="{ Component }">
-          <Transition name="route">
-            <Component :is="Component" />
-          </Transition>
+          <Transition name="route"> <Component :is="Component" /> </Transition>
         </RouterView>
       </section>
       <!-- end router view -->

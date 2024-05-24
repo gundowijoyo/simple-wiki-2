@@ -93,6 +93,7 @@
         <i v-else class="bi bi-search relative text-[20px] pulse"></i>
       </div>
       <!-- end input -->
+
       <!-- search viewer-->
       <Transition name="sv">
         <div
@@ -123,14 +124,23 @@
                   alt=""
                 />
               </div>
-              <div class="w-full h-fit overflow-hidden">
-                <h1 class="text-[0.6rem] font-bold">{{ info.title }}</h1>
-                <div class="text-[0.4rem]">
-                  <span
-                    class="inline"
-                    v-html="getFristText(info.extract)"
-                  ></span>
-                  <span>...</span>
+              <div
+                class="w-full h-fit overflow-hidden flex justify-between gap-2"
+              >
+                <div>
+                  <h1 class="text-[0.76rem] font-bold">
+                    {{ info.title }}
+                  </h1>
+                  <div class="text-[0.48rem]">
+                    <span
+                      class="inline"
+                      v-html="getFristText(info.extract)"
+                    ></span>
+                    <span>...</span>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <i class="bi bi-box-arrow-up-right text-xs"></i>
                 </div>
               </div>
             </a>

@@ -38,7 +38,7 @@
 <template>
   <!-- fixed bakground smooth gradient -->
   <div
-    class="absolute top-0 left-0 grid grid-cols-1 grid-rows-1 right-0 h-fit z-[-1000] brightness-125 bg-cover overflow-hidden md:w-[50%]"
+    class="absolute top-0 left-0 grid grid-cols-1 grid-rows-1 right-0 h-fit z-[-1000] brightness-[1.8] bg-cover overflow-hidden md:w-[50%]"
   >
     <img
       class="background transition-all duration-1000 w-screen h-screen row-start-1 col-start-1 select-none object-fit md:h-[800px]"
