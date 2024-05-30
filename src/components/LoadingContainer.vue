@@ -28,10 +28,11 @@
   .v-leave-to {
     opacity: 0;
   }
+  
   .loader {
     height: 30px;
     aspect-ratio: 2.5;
-    --_g: no-repeat radial-gradient(farthest-side, #884e0b 90%, #0000);
+    --_g: no-repeat radial-gradient(farthest-side, #b8b8b8 90%, #0000);
     background: var(--_g), var(--_g), var(--_g), var(--_g);
     background-size: 20% 50%;
     animation: l44 1s infinite linear alternate;

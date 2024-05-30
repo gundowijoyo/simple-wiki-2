@@ -26,7 +26,7 @@
     <!-- container -->
     <div class="">
       <!-- router view -->
-      <section class="grid grid-cols-1 grid-rows-1">
+      <section id="view" class="grid grid-cols-1 grid-rows-1">
         <RouterView v-slot="{ Component }">
           <Transition name="route"> <Component :is="Component" /> </Transition>
         </RouterView>

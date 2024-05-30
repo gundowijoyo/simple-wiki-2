@@ -10,9 +10,9 @@
       Simple Wiki
     </h3>
     <div class="">
-      <a class="cursor-pointer" href="#">
+      <a class="cursor-pointer" href="mailto:aryadewanggapuja@gmail.com">
         <span
-          class="mix-blend-screen bg-zinc-200 p-1 rounded-lg text-sm font-bold transition-colors duration-500 hover:bg-[#316475] hover:mix-blend-normal hover:text-white"
+          class="mix-blend-screen bg-zinc-200 p-1 rounded-lg text-sm font-bold transition-colors duration-500 hover:bg-[#b8b8b8] hover:mix-blend-normal hover:text-white"
           >Feedback</span
         >
       </a>
@@ -25,7 +25,7 @@
   .diagonal-gr {
     background-image: -webkit-linear-gradient(
       50deg,
-      #316475 70%,
+      #b8b8b8 70%,
       hsl(0, 0%, 95%) 50.3%
     );
     background-size: 200% 100%;
