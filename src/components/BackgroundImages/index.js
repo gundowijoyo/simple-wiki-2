@@ -3,4 +3,4 @@ import i4 from "./images_5.jpeg";
 import i5 from "./images_7.jpeg";
 import i7 from "./images_8.jpeg";
 
-export default [i7, i4, i5, i2];
+export default [i4, i2, i7];

@@ -66,4 +66,15 @@
 </template>
 
 <!-- style -->
-<style scoped></style>
+<style scoped>
+  	.dot-enter-active,
+	.dot-leave-active {
+		transition: 0.5s ease;
+	}
+
+	.dot-enter-from,
+	.dot-leave-to {
+		opacity: 0;
+		transform: rotate(180deg);
+	}
+</style>

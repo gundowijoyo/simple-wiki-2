@@ -88,9 +88,19 @@
 				placeholder="Search articles here ..."
 			/>
 			<!-- end main input -->
-			<div class="absolute top-2 right-3 text-zinc-300">
-				<i v-if="!isLoad" class="bi bi-search relative text-[20px]"></i>
-				<i v-else class="bi bi-search relative text-[20px] pulse"></i>
+			<div
+				class="absolute top-2 right-3 text-zinc-300 grid grid-cols-1 grid-rows-1"
+			>
+				<Transition name="dump">
+					<i
+						v-if="!isLoad"
+						class="bi bi-search text-slate-600 relative text-[20px] col-start-1 row-start-1"
+					></i>
+					<i
+						v-else
+						class="bi bi-search relative text-[20px] pulse col-start-1 row-start-1"
+					></i>
+				</Transition>
 			</div>
 			<!-- end input -->
 
@@ -177,6 +187,15 @@
 	}
 	.sv-enter-from,
 	.sv-leave-to {
+		opacity: 0;
+	}
+
+	.dump-enter-active,
+	.dump-leave-active {
+		transition: opacity 300ms ease;
+	}
+	.dump-enter-from,
+	.dump-leave-to {
 		opacity: 0;
 	}
 </style>
