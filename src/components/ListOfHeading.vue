@@ -3,6 +3,7 @@
 	import DotIcon from "../components/icons/DotIcon.vue";
 	import CrossIcon from "../components/icons/CrossIcon.vue";
 	import HouseIcon from "../components/icons/HouseIcon.vue";
+	import { RouterLink } from "vue-router";
 	import { ref } from "vue";
 
 	const isListOpen = ref(false);
@@ -29,14 +30,14 @@
 					<CrossIcon v-else class="w-6 h-6 absolute"></CrossIcon>
 				</Transition>
 			</button>
-			<a
-				href="/"
+			<RouterLink
+				to="/"
 				class="absolute w-12 h-12 rounded-full bg-stone-900 transition-all duration-300 flex justify-center items-center"
 				:class="isListOpen ? 'translate-x-[-3.76rem]' : 'rotate-180 scale-50'"
 				type="button"
 			>
 				<HouseIcon class="w-6 h-6"></HouseIcon>
-			</a>
+			</RouterLink>
 		</div>
 
 		<!-- list -->
@@ -67,7 +68,7 @@
 
 <!-- style -->
 <style scoped>
-  	.dot-enter-active,
+	.dot-enter-active,
 	.dot-leave-active {
 		transition: 0.5s ease;
 	}

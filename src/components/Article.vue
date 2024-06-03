@@ -7,7 +7,7 @@
 <template>
 	<article
 		class="mt-10 w-[98vw] h-fit mx-auto text-sm p-2 rounded-lg overflow-hidden p-2 bg-[hsla(210,40%,96.1%,0.0)] bg-contain"
-		style="background-image: url(&quot;./article-bg.jpg&quot;)"
+		style="background-image: url(&quot;/article-bg.jpg&quot;)"
 	>
 		<div class="h-full w-full overflow-clip text-white overflow-x-hidden">
 			<div class="mx-1">

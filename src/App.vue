@@ -1,5 +1,6 @@
 <!-- script -->
 <script setup>
+	import NavHeader from "./components/NavHeader.vue";
 	import Background from "./components/Background.vue";
 	import LoadingContainer from "./components/LoadingContainer.vue";
 	import { ref, onMounted } from "vue";
@@ -25,6 +26,8 @@
 	<div class="min-h-screen flex flex-col justify-between">
 		<!-- container -->
 		<div class="">
+			<NavHeader></NavHeader>
+
 			<!-- router view -->
 			<section id="view" class="grid grid-cols-1 grid-rows-1">
 				<RouterView v-slot="{ Component }">
@@ -46,7 +49,7 @@
 	/* we will explain what these classes do next! */
 	.route-enter-active,
 	.route-leave-active {
-		transition: opacity 0.5s ease;
+		transition: 0.5s ease;
 	}
 
 	.route-enter-from,

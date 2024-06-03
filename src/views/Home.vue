@@ -1,6 +1,5 @@
 <!-- script -->
 <script setup>
-	import NavHeader from "../components/NavHeader.vue";
 	import InputSearch from "../components/InputSearch.vue";
 	import SosialMedia from "../components/SosialMedia.vue";
 </script>
@@ -13,7 +12,6 @@
 		<!-- main -->
 		<section role="main header" class="">
 			<!-- header container -->
-			<NavHeader></NavHeader>
 
 			<header class="h-screen md:h-[800px]">
 				<!-- search element -->
@@ -45,7 +43,7 @@
 								</span>
 								weapon of
 								<span
-									class="mix-blend-screen px-2 bg-neutral-200 rounded-full relative inline-block w-[7.8rem]"
+									class="mix-blend-screen px-2 bg-neutral-200 rounded-full relative inline-block w-fit"
 								>
 									<span class="mix-blend-difference">HUMANITY. </span>
 								</span>

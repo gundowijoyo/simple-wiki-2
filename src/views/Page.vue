@@ -4,9 +4,9 @@
 	import ListOfHeading from "../components/ListOfHeading.vue";
 	import Article from "../components/Article.vue";
 	import { hendleNewLine } from "../utils/hendleNewLine.js";
-	import { queryByPageId, parseByPageId } from "../api/index.js";
+	import { queryByPageId } from "../api/index.js";
 	import { useRoute } from "vue-router";
-	import { ref, onMounted } from "vue";
+	import { watch, ref, onMounted } from "vue";
 
 	const route = useRoute();
 
@@ -14,19 +14,30 @@
 	const extract = ref([]);
 	const headingList = ref([]);
 
+	watch(
+		() => route.params.id,
+		async (newId, oldId) => {
+			data.value = []
+			getPage();
+		}
+	);
 	onMounted(async () => {
+		getPage();
+	});
+
+	async function getPage() {
 		try {
-			const response = await fetch(queryByPageId + route.query.id);
+			const response = await fetch(queryByPageId + route.params.id);
 			const rawData = await response.json();
 			console.log(rawData.query.pages);
-			data.value = rawData.query.pages[route.query.id];
+			data.value = rawData.query.pages[route.params.id];
 
 			hendleNewLine(data.value.extract, (result, ids) => {
 				extract.value = result;
 				headingList.value = ids;
 			});
 		} catch (error) {}
-	});
+	}
 </script>
 
 <!-- template -->

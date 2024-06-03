@@ -1,20 +1,24 @@
 <!-- script -->
 <script setup>
-	import { RouterLink, useRouter } from "vue-router";
+	import { RouterLink, useRoute, useRouter } from "vue-router";
 	import { searchArticleUrl } from "../api/index.js";
 	import { ref, onMounted } from "vue";
 
-	const route = useRouter();
+	const route = useRoute();
+	const router = useRouter();
 
 	const inputValue = ref();
 	const data = ref([]);
 	const isLoad = ref(false);
+	const isViewerActive = ref(false);
 
 	onMounted(() => {
 		let input = document.getElementById("input-1");
-		input.addEventListener("keypress", e => {
+		input.addEventListener("keyup", e => {
 			if (e.key == "Enter") {
-				window.location = `/search?query=${input.value}`;
+				router.push(`/search/${input.value}`);
+			} else {
+				searchRequest();
 			}
 		});
 	});
@@ -54,6 +58,7 @@
 				if (inputValue.value.length <= 0) controller.abort();
 				data.value = fillterData;
 				console.log(inputValue.value, fillterData);
+				isViewerActive.value = true;
 			} catch (error) {
 			} finally {
 				isLoad.value = false;
@@ -101,7 +106,6 @@
 				class="h-10 text-xs w-full p-2 outline-none rounded-md bg-slate-100 tracking-wide cursor-text shadow-md"
 				type="text"
 				id="input-1"
-				@keyup="searchRequest"
 				placeholder="Search articles here ..."
 			/>
 			<!-- end main input -->
@@ -124,18 +128,24 @@
 			<!-- search viewer-->
 			<Transition name="sv">
 				<div
-					v-if="data.length > 0"
+					v-if="isViewerActive"
 					class="w-full absolute rounded-lg top-12 overflow-hidden z-50"
 				>
 					<section v-for="(info, index) in data" class="">
 						<!-- router link -->
-						<a
-							:href="'page?id=' + info.pageid"
+						<RouterLink
+							:to="'/page/' + info.pageid"
 							class="flex justify-between items-center gap-3 px-2 py-1 border-y border-zinc-800 rounded-md bg-slate-100 hover:bg-slate-200 cursor-pointer"
 							:class="{
 								'border-t-0 rounded-t-0': index == 0,
 								'border-b-0 rounded-b-0': index == data.length - 1
 							}"
+							@click="
+								() => {
+									inputValue = '';
+									isViewerActive = false;
+								}
+							"
 						>
 							<div class="">
 								<img
@@ -170,7 +180,7 @@
 									<i class="bi bi-box-arrow-up-right text-xs"></i>
 								</div>
 							</div>
-						</a>
+						</RouterLink>
 						<!-- router link -->
 					</section>
 				</div>
