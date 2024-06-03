@@ -1,15 +1,29 @@
 <!-- script -->
 <script setup>
-	import { RouterLink } from "vue-router";
+	import { RouterLink, useRouter } from "vue-router";
 	import { searchArticleUrl } from "../api/index.js";
 	import { ref, onMounted } from "vue";
+
+	const route = useRouter();
 
 	const inputValue = ref();
 	const data = ref([]);
 	const isLoad = ref(false);
 
-	/* Debouncing involves introducing a small delay before sending a request,
-	 * allowing the user to finish their input before initiating the fetch. */
+	onMounted(() => {
+		let input = document.getElementById("input-1");
+		input.addEventListener("keypress", e => {
+			if (e.key == "Enter") {
+				window.location = `/search?query=${input.value}`;
+			}
+		});
+	});
+
+	/*
+	 * Debouncing involves introducing a small delay before sending
+	 * a request, allowing the user to finish their input before
+	 * initiating the fetch.
+	 */
 	let debounceTimer;
 	function searchRequest() {
 		isLoad.value = true;
@@ -47,7 +61,10 @@
 		}, 400);
 	}
 
-	/* extraxt value have a lot of text so i need to be get the frits one */
+	/*
+	 * extraxt value have a lot of text so i need to be get the
+	 * frits one
+	 */
 	function getFristText(text) {
 		const textArray = text.split(" ");
 		const resultArray = [];
@@ -83,7 +100,7 @@
 				v-model="inputValue"
 				class="h-10 text-xs w-full p-2 outline-none rounded-md bg-slate-100 tracking-wide cursor-text shadow-md"
 				type="text"
-				value=""
+				id="input-1"
 				@keyup="searchRequest"
 				placeholder="Search articles here ..."
 			/>
