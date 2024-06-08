@@ -34,7 +34,7 @@
 				to="/"
 				class="absolute w-12 h-12 rounded-full bg-stone-900 transition-all duration-300 flex justify-center items-center"
 				:class="isListOpen ? 'translate-x-[-3.76rem]' : 'rotate-180 scale-50'"
-				type="button"
+				onclick="window.scrollTo(0, 0)"
 			>
 				<HouseIcon class="w-6 h-6"></HouseIcon>
 			</RouterLink>

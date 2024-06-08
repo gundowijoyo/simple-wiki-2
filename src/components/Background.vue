@@ -3,7 +3,7 @@
 	import { onMounted } from "vue";
 	import images from "./BackgroundImages/index.js";
 
-	onMounted(function () {
+	onMounted(() => {
 		// get all element of images background
 		const backgrounds = document.querySelectorAll(".background");
 
@@ -38,6 +38,7 @@
 <template>
 	<!-- fixed bakground smooth gradient -->
 	<div
+		id="background-paralax-1"
 		class="absolute top-0 left-0 grid grid-cols-1 grid-rows-1 right-0 h-fit z-[-1000] brightness-[1.8] bg-cover overflow-hidden md:w-[50%]"
 	>
 		<img
@@ -49,13 +50,8 @@
 		<div
 			class="absolute top-0 right-0 bottom-0 left-0 z-10 bg-black opacity-60"
 		></div>
-	</div>
-
-	<div
-		class="absolute z-[-100] top-1 right-0 left-0 w-screen h-screen md:h-[800px]"
-	>
 		<div
-			class="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.05)] via-[rgba(0, 0,0,0.2)] to-[hsl(240,5.9%,3.21%)]"
+			class="fixed bottom-0 left-0 right-0 scale-110 h-[50vh] bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.05)] via-[rgba(0, 0,0,0.2)] to-[hsl(240,5.9%,3.21%)]"
 		></div>
 	</div>
 

@@ -1,27 +1,15 @@
 <!-- script -->
 <script setup>
-	import { RouterLink, useRoute, useRouter } from "vue-router";
+	import { RouterLink, useRouter } from "vue-router";
 	import { searchArticleUrl } from "../api/index.js";
-	import { ref, onMounted } from "vue";
+	import { ref } from "vue";
 
-	const route = useRoute();
 	const router = useRouter();
 
 	const inputValue = ref();
 	const data = ref([]);
 	const isLoad = ref(false);
 	const isViewerActive = ref(false);
-
-	onMounted(() => {
-		let input = document.getElementById("input-1");
-		input.addEventListener("keyup", e => {
-			if (e.key == "Enter") {
-				router.push(`/search/${input.value}`);
-			} else {
-				searchRequest();
-			}
-		});
-	});
 
 	/*
 	 * Debouncing involves introducing a small delay before sending
@@ -33,10 +21,16 @@
 		isLoad.value = true;
 		data.value = [];
 
+		let input = document.getElementById("input-1");
+		input.addEventListener("keyup", e => {
+			if (e.key == "Enter" && input.value.split(" ").join("") != "") {
+				router.push({ path: "/search", query: { q: input.value } });
+			}
+		});
+
 		clearTimeout(debounceTimer);
 		debounceTimer = setTimeout(async function () {
 			try {
-				// for canceling request
 				const controller = new AbortController();
 				const signal = controller.signal;
 
@@ -83,7 +77,7 @@
 
 <!-- template -->
 <template>
-	<div class="mt-5">
+	<div class="">
 		<form
 			class="flex gap-2 items-center relative"
 			action="search"
@@ -103,14 +97,15 @@
 			<!-- main input -->
 			<input
 				v-model="inputValue"
-				class="h-10 text-xs w-full p-2 outline-none rounded-md bg-slate-100 tracking-wide cursor-text shadow-md"
+				class="h-12 text-xs w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,10%)] tracking-wide cursor-text shadow-md"
 				type="text"
 				id="input-1"
+				@keyup="searchRequest()"
 				placeholder="Search articles here ..."
 			/>
 			<!-- end main input -->
 			<div
-				class="absolute top-2 right-3 text-zinc-300 grid grid-cols-1 grid-rows-1"
+				class="absolute top-3 right-3 text-zinc-300 grid grid-cols-1 grid-rows-1"
 			>
 				<Transition name="dump">
 					<i
@@ -219,7 +214,7 @@
 
 	.dump-enter-active,
 	.dump-leave-active {
-		transition: opacity 300ms ease;
+		transition: opacity 500ms ease;
 	}
 	.dump-enter-from,
 	.dump-leave-to {

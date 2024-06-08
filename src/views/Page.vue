@@ -3,7 +3,7 @@
 	import InputSearch from "../components/InputSearch.vue";
 	import ListOfHeading from "../components/ListOfHeading.vue";
 	import Article from "../components/Article.vue";
-	import { hendleNewLine } from "../utils/hendleNewLine.js";
+	import { hendleNewLine } from "../utils/index.js";
 	import { queryByPageId } from "../api/index.js";
 	import { useRoute } from "vue-router";
 	import { watch, ref, onMounted } from "vue";
@@ -17,11 +17,11 @@
 	watch(
 		() => route.params.id,
 		async (newId, oldId) => {
-			data.value = []
+			data.value = [];
 			getPage();
 		}
 	);
-	onMounted(async () => {
+	onMounted(() => {
 		getPage();
 	});
 

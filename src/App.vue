@@ -26,19 +26,21 @@
 	<div class="min-h-screen flex flex-col justify-between">
 		<!-- container -->
 		<div class="">
-			<NavHeader></NavHeader>
+			<header>
+				<NavHeader></NavHeader>
+			</header>
 
 			<!-- router view -->
-			<section id="view" class="grid grid-cols-1 grid-rows-1">
+			<main id="view" class="grid grid-cols-1 grid-rows-1">
 				<RouterView v-slot="{ Component }">
 					<Transition name="route"> <Component :is="Component" /> </Transition>
 				</RouterView>
-			</section>
+			</main>
 			<!-- end router view -->
 		</div>
 		<!-- end container -->
 		<!-- container -->
-		<div class="mt-28 bg-slate-200 h-screen">footer</div>
+		<div class="text-white">footer</div>
 		<!-- end container -->
 	</div>
 	<!-- end main components-->
@@ -49,11 +51,12 @@
 	/* we will explain what these classes do next! */
 	.route-enter-active,
 	.route-leave-active {
-		transition: 0.5s ease;
+		transition: 0.7s ease;
 	}
 
 	.route-enter-from,
 	.route-leave-to {
 		opacity: 0;
+		transform: translateY(200px) scale(0.95);
 	}
 </style>

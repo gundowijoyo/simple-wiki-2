@@ -26,3 +26,7 @@ AOS.init({
 window.onresize = () => {
 	AOS.refresh();
 };
+
+window.onpopstate = () => {
+	window.scrollTo(0, 0);
+};
