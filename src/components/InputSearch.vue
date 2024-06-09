@@ -97,11 +97,11 @@
 			<!-- main input -->
 			<input
 				v-model="inputValue"
-				class="h-12 text-xs w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,10%)] tracking-wide cursor-text shadow-md"
+				class="h-12 text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,10%)] text-zinc-400 tracking-wide cursor-text shadow-md placeholder-[hsl(240,5%,64.9%)]"
 				type="text"
 				id="input-1"
 				@keyup="searchRequest()"
-				placeholder="Search articles here ..."
+				placeholder="Search articles here..."
 			/>
 			<!-- end main input -->
 			<div
@@ -110,7 +110,7 @@
 				<Transition name="dump">
 					<i
 						v-if="!isLoad"
-						class="bi bi-search text-slate-600 relative text-[20px] col-start-1 row-start-1"
+						class="bi bi-search text-zinc-500 relative text-[20px] col-start-1 row-start-1"
 					></i>
 					<i
 						v-else
@@ -124,13 +124,13 @@
 			<Transition name="sv">
 				<div
 					v-if="isViewerActive"
-					class="w-full absolute rounded-lg top-12 overflow-hidden z-50"
+					class="w-full absolute rounded-lg top-14 overflow-hidden z-50 flex flex-col gap-1"
 				>
 					<section v-for="(info, index) in data" class="">
 						<!-- router link -->
 						<RouterLink
 							:to="'/page/' + info.pageid"
-							class="flex justify-between items-center gap-3 px-2 py-1 border-y border-zinc-800 rounded-md bg-slate-100 hover:bg-slate-200 cursor-pointer"
+							class="flex justify-between items-center gap-3 px-2 py-1 rounded-md bg-[hsl(0,0%,15.5%)]"
 							:class="{
 								'border-t-0 rounded-t-0': index == 0,
 								'border-b-0 rounded-b-0': index == data.length - 1
@@ -160,19 +160,19 @@
 								class="w-full h-fit overflow-hidden flex justify-between gap-2"
 							>
 								<div>
-									<h1 class="text-[0.76rem] font-bold">
+									<h1 class="text-[0.76rem] font-bold text-zinc-300">
 										{{ info.title }}
 									</h1>
 									<div class="text-[0.48rem]">
 										<span
-											class="inline"
+											class="inline text-zinc-300"
 											v-html="getFristText(info.extract)"
 										></span>
 										<span>...</span>
 									</div>
 								</div>
 								<div class="flex items-center">
-									<i class="bi bi-box-arrow-up-right text-xs"></i>
+									<i class="bi bi-box-arrow-up-right text-xs text-zinc-300"></i>
 								</div>
 							</div>
 						</RouterLink>

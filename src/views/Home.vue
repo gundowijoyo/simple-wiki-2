@@ -9,7 +9,7 @@
 	<div class="min-h-screen col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
 		<section
 			role="landing"
-			class="h-[30rem] w-[90%] p-4 mt-28 mx-auto img-background rounded-xl bg-[hsla(0,0%,8%,0.475)] overflow-hidden backdrop-blur-[6px]"
+			class="h-[30rem] w-[90%] p-4 mt-28 mx-auto img-background rounded-xl bg-[hsla(0,0%,8%,0.475)] backdrop-blur-[6px]"
 		>
 			<section role="search input" class="rounded-2xl">
 				<InputSearch></InputSearch>

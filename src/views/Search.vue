@@ -8,6 +8,7 @@
 
 	const data = ref([]);
 	const isLoad = ref(false);
+	const isSearchable = ref(true);
 
 	onMounted(async () => {
 		getData(() => {
@@ -19,7 +20,11 @@
 		try {
 			const response = await fetch(gsrSearchUrl + route.query.q);
 			const json = await response.json();
+
 			console.log(json);
+			if (!json.query) {
+				isSearchable.value = false;
+			}
 			data.value = json.query.pages;
 		} catch (e) {
 		} finally {
@@ -45,8 +50,8 @@
 	>
 		<Transition>
 			<div
-				v-if="isLoad"
-				class="w-[80%] mx-auto my-5 flex flex-col gap-2 col-start-1 row-start-1 "
+				v-if="isLoad && isSearchable"
+				class="w-[80%] mx-auto my-5 flex flex-col gap-2 col-start-1 row-start-1"
 			>
 				<section v-for="(info, index) in data">
 					<!-- router link -->
@@ -99,10 +104,17 @@
 
 			<!-- skeleton -->
 			<div
-				v-else
+				v-else-if="!isLoad && isSearchable"
 				class="w-[90%] h-screen mx-auto bg-amber-100 col-start-1 row-start-1 rounded-xl"
 			></div>
 			<!-- end skeleton -->
+
+			<!-- 404 -->
+			<div
+				v-else
+				class="w-[90%] h-screen mx-auto bg-red-100 col-start-1 row-start-1 rounded-xl"
+			></div>
+			<!-- 404 -->
 		</Transition>
 	</div>
 </template>
