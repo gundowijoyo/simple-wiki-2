@@ -9,44 +9,56 @@
 	<div class="min-h-screen col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
 		<section
 			role="landing"
-			class="h-[30rem] w-[90%] p-4 mt-28 mx-auto img-background rounded-xl bg-[hsla(0,0%,8%,0.475)] backdrop-blur-[6px]"
+			class="h-[30rem] w-[90%] relative p-4 mt-28 mx-auto rounded-xl overflow-hidden bg-transparent"
 		>
-			<section role="search input" class="rounded-2xl">
+			<section role="search input" class="rounded-2xl h-16">
 				<InputSearch></InputSearch>
 			</section>
 
 			<section
 				rule="info"
-				class="grid grid-cols-5 grid-rows-3 gap-2 w-[90%] h-[18rem] mx-auto mt-10"
+				class="grid grid-cols-5 grid-rows-3 gap-2 h-[18rem] mx-auto"
 			>
 				<div class="col-start-1 row-start-1 row-span-2">
 					<SosialMedia></SosialMedia>
 				</div>
-				<div class="col-start-2 col-span-4 row-start-1 row-span-3">
-					<div class="w-full h-full flex flex-col justify-center items-center">
-						<h1
-							class="text-[1.8rem] leading-[2rem] font-black text-neutral-100 mx-2 red-hat"
-						>
-							Mind is a most
-							<span
-								class="mix-blend-screen px-2 bg-neutral-200 rounded-full block w-full"
-							>
-								<span class="mix-blend-difference">POWERFUL</span>
-							</span>
-							weapon of
-							<span
-								class="mix-blend-screen px-2 bg-neutral-200 rounded-full relative inline-block w-fit"
-							>
-								<span class="mix-blend-difference">HUMANITY. </span>
-							</span>
-						</h1>
-						<p class="mx-2 mt-2 text-neutral-300">
-							Explore your creativity and make the best changes of yourself.
-						</p>
-					</div>
-				</div>
+				<h1
+					class="col-start-2 col-span-4 row-start-1 row-span-2 text-2xl text-neutral-400 font-bold"
+				>
+					<span class="text-transparent text-4xl">Make live more better</span>.
+					Mind is a powerfull weapon, use's it.
+				</h1>
+				<p
+					class="col-start-1 col-span-5 text-center text-neutral-400 row-start-3 text-sm"
+				>
+					lorem ipsum sit dolor it amet cupidatat officia incididunt cupidatat
+					laboris in pariatur esse laboris tempor est.
+				</p>
 			</section>
-			<!-- end landing -->
+
+			<div
+				class="absolute top-0 left-0 w-full h-full bg-[hsla(0,0%,7%,0.9)] z-[-1] p-4 mix-blend-darken backdrop-blur-[2px]"
+			>
+				<div class="h-16"></div>
+				<section
+					rule="info"
+					class="grid grid-cols-5 grid-rows-3 gap-2 h-[18rem] mx-auto"
+				>
+					<div class="col-start-1 row-start-1 row-span-2"></div>
+					<h1
+						class="col-start-2 text-white text-4xl font-bold col-span-4 row-start-1 row-span-2 mix-blend-difference"
+					>
+						Make live more better
+					</h1>
+				</section>
+			</div>
+
+			<div class="w-auto h-24 flex justify-center items-end">
+				<p class="text-xs text-neutral-400 uppercase">
+					create with <i class="bi bi-heart-fill text-[0.6rem] text-red-600"></i> by
+					ka-shifuka
+				</p>
+			</div>
 		</section>
 
 		<!-- main section -->
@@ -57,7 +69,7 @@
 
 <!-- style -->
 <style scoped>
-	/* 
+	/*
 	.img-background::before {
 		content: "";
 		position: absolute;
@@ -65,10 +77,9 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		 background-color: hsl(0, 0%, 9%); 
 		opacity: 0.6;
-		background-image: url("/SUDIO.gif");
-		filter: brightness(60%);
-		background-size: cover;
+		backdrop-filter: blur(0px);
 		z-index: -1;
 	}
 */

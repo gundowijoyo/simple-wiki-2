@@ -6,7 +6,7 @@
 <!-- template -->
 <template>
 	<article
-		class="mt-10 w-[98vw] h-fit mx-auto text-sm p-2 rounded-lg overflow-hidden p-2 bg-[length:200vw_100vh] grid grid-cols-1 grid-rows-1"
+		class="mt-10 w-[98vw] h-fit mx-auto text-sm p-2 rounded-xl overflow-hidden p-2 bg-[length:200vw_100vh] grid grid-cols-1 grid-rows-1"
 		style="background-image: url(&quot;/article-bg.jpg&quot;)"
 	>
 		<Transition>
@@ -22,7 +22,7 @@
 						<Transition>
 							<img
 								v-if="props.data.thumbnail"
-								class="w-full aspect-[4/3] p-4 rounded-3xl col-start-1 row-start-1"
+								class="w-full aspect-[4/3] p-4 rounded-3xl col-start-1 row-start-1 brightness-75"
 								:src="props.data.thumbnail.source"
 								alt=""
 							/>
@@ -49,9 +49,12 @@
 			</div>
 
 			<!-- skeleton effect -->
-			<div v-else class="w-full h-screen col-start-1 row-start-1">
+			<div
+				v-else
+				class="w-full h-screen col-start-1 row-start-1"
+			>
 				<div
-					class="w-full h-full bg-neutral-900 opacity-80 rounded-md flex justify-center items-center animate-pulse"
+					class="w-full h-full bg-neutral-900 opacity-80 rounded-lg flex justify-center items-center animate-pulse"
 				>
 					<div
 						class="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"
@@ -59,6 +62,7 @@
 				</div>
 			</div>
 			<!-- end skeleton effect -->
+			<!-- 404 -->
 		</Transition>
 	</article>
 </template>

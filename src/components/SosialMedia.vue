@@ -3,7 +3,7 @@
 
 <!-- template -->
 <template>
-	<div class="w-auto h-full mx-2 bg-[hsla(240,5.9%,4%,0.2)] rounded-xl">
+	<div class="w-auto h-full bg-[hsla(240,5.9%,4%,0.5)] rounded-xl">
 		<div
 			class="w-full h-full flex flex-col justify-evenly items-center text-xl text-[hsla(0,0%,83.1%,0.8)]"
 		>

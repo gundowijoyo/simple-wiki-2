@@ -5,14 +5,16 @@
 	import Article from "../components/Article.vue";
 	import { hendleNewLine } from "../utils/index.js";
 	import { queryByPageId } from "../api/index.js";
-	import { useRoute } from "vue-router";
+	import { useRoute, useRouter } from "vue-router";
 	import { watch, ref, onMounted } from "vue";
 
 	const route = useRoute();
+	const router = useRouter();
 
 	const data = ref([]);
 	const extract = ref([]);
 	const headingList = ref([]);
+	const isSearchable = ref(true);
 
 	watch(
 		() => route.params.id,
@@ -28,9 +30,14 @@
 	async function getPage() {
 		try {
 			const response = await fetch(queryByPageId + route.params.id);
-			const rawData = await response.json();
-			console.log(rawData.query.pages);
-			data.value = rawData.query.pages[route.params.id];
+			const json = await response.json();
+			console.log(json);
+			console.log(json.query);
+			if (!json.query) {
+				router.push("/404");
+				console.log("hello");
+			}
+			data.value = json.query.pages[route.params.id];
 
 			hendleNewLine(data.value.extract, (result, ids) => {
 				extract.value = result;

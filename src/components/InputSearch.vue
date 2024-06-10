@@ -97,7 +97,7 @@
 			<!-- main input -->
 			<input
 				v-model="inputValue"
-				class="h-12 text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,10%)] text-zinc-400 tracking-wide cursor-text shadow-md placeholder-[hsl(240,5%,64.9%)]"
+				class="h-12 text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-zinc-400 tracking-wide cursor-text shadow-md placeholder-[hsl(240,5%,64.9%)]"
 				type="text"
 				id="input-1"
 				@keyup="searchRequest()"
@@ -145,13 +145,13 @@
 							<div class="">
 								<img
 									v-if="info.thumbnail"
-									class="w-14 h-10 rounded-md"
+									class="w-14 h-10 rounded-md brightness-75"
 									:src="info.thumbnail.source"
 									alt="info.title"
 								/>
 								<img
 									v-if="!info.thumbnail"
-									class="w-14 h-10 rounded-md"
+									class="w-14 h-10 rounded-md brightness-75"
 									src="/imageNotFound.png"
 									alt=""
 								/>

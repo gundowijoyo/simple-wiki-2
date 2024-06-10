@@ -40,7 +40,11 @@
 		</div>
 		<!-- end container -->
 		<!-- container -->
-		<div class="text-white">footer</div>
+		<div class="">
+			<div class="w-screen h-20 text-white mt-10">
+				<h1 class="text-center">simplewiki</h1>
+			</div>
+		</div>
 		<!-- end container -->
 	</div>
 	<!-- end main components-->
