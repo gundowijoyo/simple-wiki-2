@@ -47,11 +47,17 @@
 						fillterData.push(rawDatas.query.pages[key]);
 					}
 				}
+				const buffer = [];
+				for (let i = 0; i < fillterData.length; i++) {
+					if (i < 6) {
+						buffer.push(fillterData[i]);
+					}
+				}
 
 				// input = "" abort
 				if (inputValue.value.length <= 0) controller.abort();
-				data.value = fillterData;
-				console.log(inputValue.value, fillterData);
+				data.value = buffer;
+				console.log(inputValue.value, fillterData, buffer);
 				isViewerActive.value = true;
 			} catch (error) {
 			} finally {
@@ -67,7 +73,6 @@
 	function getFristText(text) {
 		const textArray = text.split(" ");
 		const resultArray = [];
-		// if is a 20 frist text we stop it
 		for (let i = 0; i < 15; i++) {
 			resultArray.push(textArray[i]);
 		}
@@ -130,7 +135,7 @@
 						<!-- router link -->
 						<RouterLink
 							:to="'/page/' + info.pageid"
-							class="flex justify-between items-center gap-3 px-2 py-1 rounded-md bg-[hsl(0,0%,15.5%)]"
+							class="flex justify-between items-center gap-3 p-2 rounded-md bg-[hsl(0,0%,9%)]"
 							:class="{
 								'border-t-0 rounded-t-0': index == 0,
 								'border-b-0 rounded-b-0': index == data.length - 1

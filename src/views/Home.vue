@@ -9,7 +9,7 @@
 	<div class="min-h-screen col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
 		<section
 			role="landing"
-			class="h-[30rem] w-[90%] relative p-4 mt-28 mx-auto rounded-xl overflow-hidden bg-transparent"
+			class="h-[30rem] w-[90%] relative p-4 mt-28 mx-auto rounded-xl bg-transparent"
 		>
 			<section role="search input" class="rounded-2xl h-16">
 				<InputSearch></InputSearch>
@@ -23,9 +23,11 @@
 					<SosialMedia></SosialMedia>
 				</div>
 				<h1
-					class="col-start-2 col-span-4 row-start-1 row-span-2 text-2xl text-neutral-400 font-bold"
+					class="col-start-2 col-span-4 row-start-1 row-span-2 text-2xl text-neutral-400 font-bold px-2"
 				>
-					<span class="text-transparent text-4xl">Make live more better</span>.
+					<span class="text-transparent text-4xl leading-[2rem]"
+						>Make live more better.</span
+					>
 					Mind is a powerfull weapon, use's it.
 				</h1>
 				<p
@@ -35,9 +37,9 @@
 					laboris in pariatur esse laboris tempor est.
 				</p>
 			</section>
-
+			<!-- blending mode -->
 			<div
-				class="absolute top-0 left-0 w-full h-full bg-[hsla(0,0%,7%,0.9)] z-[-1] p-4 mix-blend-darken backdrop-blur-[2px]"
+				class="absolute top-0 left-0 w-full h-full bg-[hsla(0,0%,7%,0.8)] z-[-1] p-4 mix-blend-darken backdrop-blur-[2px] rounded-xl"
 			>
 				<div class="h-16"></div>
 				<section
@@ -46,16 +48,18 @@
 				>
 					<div class="col-start-1 row-start-1 row-span-2"></div>
 					<h1
-						class="col-start-2 text-white text-4xl font-bold col-span-4 row-start-1 row-span-2 mix-blend-difference"
+						class="col-start-2 text-neutral-400 text-4xl font-bold col-span-4 row-start-1 row-span-2 mix-blend-difference px-2 leading-[2rem]"
 					>
-						Make live more better
+						Make live more better.
 					</h1>
 				</section>
 			</div>
+			<!-- end blending mode -->
 
 			<div class="w-auto h-24 flex justify-center items-end">
 				<p class="text-xs text-neutral-400 uppercase">
-					create with <i class="bi bi-heart-fill text-[0.6rem] text-red-600"></i> by
+					create with
+					<i class="bi bi-heart-fill text-[0.6rem] text-red-600"></i> by
 					ka-shifuka
 				</p>
 			</div>

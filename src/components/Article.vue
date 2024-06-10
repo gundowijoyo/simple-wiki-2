@@ -6,7 +6,7 @@
 <!-- template -->
 <template>
 	<article
-		class="mt-10 w-[98vw] h-fit mx-auto text-sm p-2 rounded-xl overflow-hidden p-2 bg-[length:200vw_100vh] grid grid-cols-1 grid-rows-1"
+		class="mt-10 w-[98vw] h-fit min-h-screen mx-auto text-sm p-2 rounded-xl overflow-hidden p-2 bg-[length:200vw_100vh] grid grid-cols-1 grid-rows-1"
 		style="background-image: url(&quot;/article-bg.jpg&quot;)"
 	>
 		<Transition>
