@@ -14,7 +14,7 @@
 				v-if="props.data.extract"
 				class="h-full w-full overflow-clip text-white overflow-x-hidden col-start-1 row-start-1"
 			>
-				<div class="mx-1">
+				<section role="thumbnail">
 					<h2 class="text-3xl font-black text-slate-950 text-center">
 						{{ props.data.title }}
 					</h2>
@@ -29,9 +29,9 @@
 							<br v-else-if="!props.data.thumbnail" />
 						</Transition>
 					</div>
-				</div>
-				<!-- extract data -->
-				<div class="grid grid-cols-1 grid-rows-1">
+				</section>
+
+				<section role="content" class="grid grid-cols-1 grid-rows-1">
 					<div class="col-start-1 row-start-1">
 						<h3
 							id="pengenalan"
@@ -44,15 +44,11 @@
 							class="text-s mx-1 text-slate-900"
 						></div>
 					</div>
-				</div>
-				<!-- end extract data-->
+				</section>
 			</div>
 
 			<!-- skeleton effect -->
-			<div
-				v-else
-				class="w-full h-screen col-start-1 row-start-1"
-			>
+			<div v-else class="w-full h-screen col-start-1 row-start-1">
 				<div
 					class="w-full h-full bg-neutral-900 opacity-80 rounded-lg flex justify-center items-center animate-pulse"
 				>

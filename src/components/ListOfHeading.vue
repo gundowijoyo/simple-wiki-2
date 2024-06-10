@@ -50,13 +50,17 @@
 					v-if="headingList"
 					class="w-auto h-full flex flex-col gap-1 overflow-scroll overflow-x-hidden text-neutral-200"
 				>
-					<a class="p-2 mr-3 text-sm bg-neutral-950 rounded-lg" href="#"
+					<a
+						class="p-2 mr-3 text-sm bg-neutral-950 rounded-lg"
+						href="#"
+						@click="isListOpen = !isListOpen"
 						>Pengenalan</a
 					>
 					<a
 						v-for="list in props.headingList"
 						class="p-2 mr-3 text-sm bg-neutral-950 rounded-lg"
 						:href="'#' + list"
+						@click="isListOpen = !isListOpen"
 					>
 						{{ hendle_(list) }}</a
 					>
