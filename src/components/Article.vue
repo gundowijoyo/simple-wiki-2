@@ -15,7 +15,7 @@
 				class="h-full w-full overflow-clip text-white overflow-x-hidden col-start-1 row-start-1"
 			>
 				<section role="thumbnail">
-					<h2 class="text-3xl font-black text-neutral-300 text-center">
+					<h2 class="text-3xl font-black text-neutral-300 text-center mt-5">
 						{{ props.data.title }}
 					</h2>
 					<div class="grid grid-rows-1 grid-cols-1">

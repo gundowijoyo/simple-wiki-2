@@ -9,7 +9,7 @@
 	<div class="min-h-screen col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
 		<section
 			role="landing"
-			class="h-[30rem] w-[90%] relative p-4 mt-28 mx-auto rounded-xl bg-transparent"
+			class="h-[30rem] w-[90%] relative p-4 mt-28 mx-auto rounded-xl bg-transparent md:w-[30rem]"
 		>
 			<section role="search input" class="rounded-2xl h-16">
 				<InputSearch></InputSearch>
@@ -25,7 +25,7 @@
 				<h1
 					class="col-start-2 col-span-4 row-start-1 row-span-2 text-2xl text-neutral-400 font-bold px-2"
 				>
-					<span class="text-transparent text-4xl leading-[2rem]"
+					<span class="text-transparent text-4xl leading-[2rem] md:text-6xl"
 						>Make live more better.</span
 					>
 					Mind is a powerfull weapon, use's it.
@@ -48,7 +48,7 @@
 				>
 					<div class="col-start-1 row-start-1 row-span-2"></div>
 					<h1
-						class="col-start-2 text-neutral-400 text-4xl font-bold col-span-4 row-start-1 row-span-2 mix-blend-difference px-2 leading-[2rem]"
+						class="col-start-2 text-neutral-400 text-4xl font-bold col-span-4 row-start-1 row-span-2 mix-blend-difference px-2 leading-[2rem] md:text-6xl"
 					>
 						Make live more better.
 					</h1>

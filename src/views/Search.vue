@@ -51,13 +51,13 @@
 		<Transition>
 			<div
 				v-if="isLoad && isSearchable"
-				class="w-[90%] mx-auto my-5 flex flex-col gap-2 col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
+				class="w-[90%] h-[80vh] mx-auto my-5 flex flex-col justify-evenly col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
 			>
 				<section v-for="(info, index) in data">
 					<!-- router link -->
 					<RouterLink
 						:to="'/page/' + info.pageid"
-						class="flex justify-between items-center gap-3 px-2 py-1 rounded-md cursor-pointer bg-[hsl(0,0%,8%)]"
+						class="flex justify-between items-center gap-3 p-2 rounded-md cursor-pointer bg-[hsl(0,0%,8%)]"
 					>
 						<section role="thumbnail">
 							<img
@@ -102,15 +102,28 @@
 			<!-- skeleton -->
 			<div
 				v-else-if="!isLoad && isSearchable"
-				class="w-[90%] h-screen mx-auto bg-amber-100 col-start-1 row-start-1 rounded-xl"
-			></div>
+				class="w-[90%] h-[80vh] mx-auto my-5 flex flex-col items-center justify-center gap-2 col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
+			>
+				<div
+					class="w-20 aspect-square border-8 border-neutral-300 border-t-transparent animate-spin rounded-full"
+				></div>
+			</div>
 			<!-- end skeleton -->
 
 			<!-- 404 -->
 			<div
 				v-else
-				class="w-[90%] h-screen mx-auto bg-red-100 col-start-1 row-start-1 rounded-xl"
-			></div>
+				class="w-[90%] h-[80vh] mx-auto my-5 flex flex-col items-center justify-center col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
+			>
+				<h1
+					class="mix-blend-difference text-4xl text-neutral-300 font-semibold"
+				>
+					404
+				</h1>
+				<h1 class="mix-blend-difference text-xl text-neutral-300 font-semibold">
+					Not Found
+				</h1>
+			</div>
 			<!-- 404 -->
 		</Transition>
 	</div>

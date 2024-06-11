@@ -91,20 +91,14 @@
 			method="GET"
 			accept-charset="utf-8"
 		>
-			<!-- hidden -->
-			<input
-				autocomplete="false"
-				name="hidden"
-				type="text"
-				style="display: none"
-			/>
-			<!-- end hidden -->
+			<input class="hidden" type="text" />
 			<!-- input -->
 			<input
 				v-model="inputValue"
 				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-neutral-400 tracking-wide cursor-text shadow-md placeholder-[hsl(0,0%,63.9%)]"
 				type="text"
 				id="input-1"
+				autocomplete="off"
 				@keyup="searchRequest()"
 				placeholder="Search articles here..."
 			/>

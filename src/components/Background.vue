@@ -39,10 +39,10 @@
 	<!-- fixed bakground smooth gradient -->
 	<div
 		id="background-paralax-1"
-		class="absolute top-0 left-0 grid grid-cols-1 grid-rows-1 right-0 h-fit z-[-1000] brightness-[1.8] bg-cover overflow-hidden md:w-[50%]"
+		class="absolute top-0 left-0 grid grid-cols-1 grid-rows-1 right-0 h-fit z-[-1000] brightness-[1.8] bg-cover overflow-hidden md:w-[80%] md:aspect-[3/4]"
 	>
 		<img
-			class="background transition-all duration-1000 w-screen h-screen row-start-1 col-start-1 select-none object-fit md:h-[800px]"
+			class="background transition-all duration-1000 w-screen h-screen row-start-1 col-start-1 select-none md:w-full md:h-full"
 			v-for="image in images"
 			:src="image"
 		/>
