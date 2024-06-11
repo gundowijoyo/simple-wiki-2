@@ -52,7 +52,7 @@
 	<main class="col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
 		<!-- main -->
 		<section role="main" class="min-w-[100vw] max-w-[100vw]">
-			<section class="w-[90%] mx-auto mt-10">
+			<section role="search" class="w-[90%] mx-auto mt-10">
 				<InputSearch></InputSearch>
 			</section>
 			<!-- article -->

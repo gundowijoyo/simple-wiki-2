@@ -3,10 +3,7 @@
 
 <!-- template -->
 <template>
-	<section role="sosial media" class="w-auto h-full bg-[hsla(240,5.9%,4%,0.5)] rounded-xl">
-		<div
-			class="w-full h-full flex flex-col justify-evenly items-center text-xl text-[hsla(0,0%,70.1%,0.8)]"
-		>
+	<section role="sosial media" class="w-auto h-full bg-[hsla(240,5.9%,4%,0.5)] rounded-xl flex flex-col justify-evenly items-center text-xl text-[hsla(0,0%,70.1%,0.8)]">
 			<a
 				class="cursor-pointer"
 				href="https://www.instagram.com/aryadewanggapuja"
@@ -46,7 +43,6 @@
 					<i class="bi bi-linkedin"></i>
 				</span>
 			</a>
-		</div>
 	</section>
 </template>
 

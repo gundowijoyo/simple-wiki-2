@@ -51,41 +51,38 @@
 		<Transition>
 			<div
 				v-if="isLoad && isSearchable"
-				class="w-[80%] mx-auto my-5 flex flex-col gap-2 col-start-1 row-start-1"
+				class="w-[90%] mx-auto my-5 flex flex-col gap-2 col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
 			>
 				<section v-for="(info, index) in data">
 					<!-- router link -->
 					<RouterLink
 						:to="'/page/' + info.pageid"
-						class="flex justify-between items-center gap-3 px-2 py-1 border-y border-zinc-800 rounded-md bg-slate-100 hover:bg-slate-200 cursor-pointer"
-						:class="{
-							'border-t-0 rounded-t-0': index == 0,
-							'border-b-0 rounded-b-0': index == data.length - 1
-						}"
+						class="flex justify-between items-center gap-3 px-2 py-1 rounded-md cursor-pointer bg-[hsl(0,0%,8%)]"
 					>
 						<section role="thumbnail">
 							<img
 								v-if="info.thumbnail"
-								class="w-14 h-10 rounded-md"
+								class="w-14 h-10 rounded-md brightness-75"
 								:src="info.thumbnail.source"
 								alt="info.title"
 							/>
 							<img
 								v-if="!info.thumbnail"
-								class="w-14 h-10 rounded-md"
+								class="w-14 h-10 rounded-md brightness-75"
 								src="/imageNotFound.png"
 								alt=""
 							/>
 						</section>
 
-						<div
+						<section
+							role="article info"
 							class="w-full h-fit overflow-hidden flex justify-between gap-2"
 						>
 							<div>
-								<h1 class="text-[0.76rem] font-bold">
+								<h1 class="text-[0.76rem] font-bold text-neutral-400">
 									{{ info.title }}
 								</h1>
-								<div class="text-[0.48rem]">
+								<div class="text-[0.48rem] text-neutral-400">
 									<span
 										class="inline"
 										v-html="getFristText(info.extract)"
@@ -94,9 +91,9 @@
 								</div>
 							</div>
 							<div class="flex items-center">
-								<i class="bi bi-box-arrow-up-right text-xs"></i>
+								<i class="bi bi-box-arrow-up-right text-xs text-stone-400"></i>
 							</div>
-						</div>
+						</section>
 					</RouterLink>
 					<!-- router link -->
 				</section>

@@ -15,7 +15,7 @@
 				class="h-full w-full overflow-clip text-white overflow-x-hidden col-start-1 row-start-1"
 			>
 				<section role="thumbnail">
-					<h2 class="text-3xl font-black text-slate-950 text-center">
+					<h2 class="text-3xl font-black text-neutral-300 text-center">
 						{{ props.data.title }}
 					</h2>
 					<div class="grid grid-rows-1 grid-cols-1">
@@ -35,13 +35,13 @@
 					<div class="col-start-1 row-start-1">
 						<h3
 							id="pengenalan"
-							class="mx-1 text-2xl mt-3 mb-1 text-slate-900 font-semibold"
+							class="mx-1 text-2xl mt-3 mb-1 text-neutral-300 font-semibold"
 						>
 							Pengenalan
 						</h3>
 						<div
 							v-html="props.extract"
-							class="text-s mx-1 text-slate-900"
+							class="text-s mx-1 text-neutral-300"
 						></div>
 					</div>
 				</section>

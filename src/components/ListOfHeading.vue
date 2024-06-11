@@ -16,7 +16,7 @@
 
 <!-- template -->
 <template>
-	<section class="">
+	<section role="fill of content">
 		<div
 			class="w-20 h-14 fixed bottom-10 right-8 flex items-center justify-evenly"
 		>
@@ -41,7 +41,7 @@
 		</div>
 
 		<!-- list -->
-		<section role="heading list" class="fixed bottom-24 w-full h-fit">
+		<section role="content list" class="fixed bottom-24 w-full h-fit">
 			<div
 				class="w-[80%] mx-auto bg-neutral-900 rounded-xl p-2 transition-all duration-500"
 				:class="isListOpen ? 'h-[20rem] ' : 'h-0 opacity-0'"

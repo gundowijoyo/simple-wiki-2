@@ -59,7 +59,6 @@
 				if (inputValue.value.length <= 0) controller.abort();
 				data.value = buffer;
 				isSearchable.value = true;
-				console.log(inputValue.value, fillterData, buffer);
 			} catch (error) {
 			} finally {
 				isLoad.value = false;
@@ -103,7 +102,7 @@
 			<!-- input -->
 			<input
 				v-model="inputValue"
-				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-zinc-400 tracking-wide cursor-text shadow-md placeholder-[hsl(240,5%,64.9%)]"
+				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-neutral-400 tracking-wide cursor-text shadow-md placeholder-[hsl(0,0%,63.9%)]"
 				type="text"
 				id="input-1"
 				@keyup="searchRequest()"
@@ -130,7 +129,7 @@
 			<Transition>
 				<div
 					v-if="isSearchable"
-					class="w-full absolute rounded-lg top-14 overflow-hidden z-50 flex flex-col gap-1"
+					class="w-full absolute rounded-lg top-14 overflow-hidden z-50 flex flex-col gap-1 bg-[hsla(0,0%,9%,0.6)] p-2 backdrop-blur-sm"
 				>
 					<section role="link" v-for="(info, index) in data">
 						<RouterLink
