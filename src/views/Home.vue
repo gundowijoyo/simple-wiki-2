@@ -9,7 +9,7 @@
 	<div class="min-h-screen col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
 		<section
 			role="landing"
-			class="h-[30rem] w-[90%] relative p-4 mt-28 mx-auto rounded-xl bg-transparent md:w-[30rem]"
+			class="h-[30rem] w-[90%] relative p-4 mt-28 mx-auto rounded-xl bg-transparent md:w-[30rem] sm:w-[26rem]"
 		>
 			<section role="search input" class="rounded-2xl h-16">
 				<InputSearch></InputSearch>
@@ -17,13 +17,13 @@
 
 			<section
 				rule="info"
-				class="grid grid-cols-5 grid-rows-3 gap-2 h-[18rem] mx-auto"
+				class="grid grid-cols-5 grid-rows-3 gap-2 h-[18rem] mx-auto md:grid-cols-6"
 			>
 				<div class="col-start-1 row-start-1 row-span-2">
 					<SosialMedia></SosialMedia>
 				</div>
 				<h1
-					class="col-start-2 col-span-4 row-start-1 row-span-2 text-2xl text-neutral-400 font-bold px-2"
+					class="col-start-2 col-span-4 row-start-1 row-span-2 text-2xl text-neutral-400 font-bold px-2 md:text-4xl md:col-span-6"
 				>
 					<span class="text-transparent text-4xl leading-[2rem] md:text-6xl"
 						>Make live more better.</span
@@ -31,7 +31,7 @@
 					Mind is a powerfull weapon, use's it.
 				</h1>
 				<p
-					class="col-start-1 col-span-5 text-center text-neutral-400 row-start-3 text-sm"
+					class="flex justify-center items-center col-start-1 col-span-5 text-center text-neutral-400 row-start-3 text-sm md:text-md md:px-10 md:col-span-6"
 				>
 					lorem ipsum sit dolor it amet cupidatat officia incididunt cupidatat
 					laboris in pariatur esse laboris tempor est.
@@ -44,11 +44,11 @@
 				<div class="h-16"></div>
 				<section
 					rule="info"
-					class="grid grid-cols-5 grid-rows-3 gap-2 h-[18rem] mx-auto"
+					class="grid grid-cols-5 grid-rows-3 gap-2 h-[18rem] mx-auto md:grid-cols-6"
 				>
 					<div class="col-start-1 row-start-1 row-span-2"></div>
 					<h1
-						class="col-start-2 text-neutral-400 text-4xl font-bold col-span-4 row-start-1 row-span-2 mix-blend-difference px-2 leading-[2rem] md:text-6xl"
+						class="col-start-2 text-neutral-400 text-4xl font-bold col-span-4 row-start-1 row-span-2 mix-blend-difference px-2 leading-[2rem] md:text-6xl md:col-span-6"
 					>
 						Make live more better.
 					</h1>

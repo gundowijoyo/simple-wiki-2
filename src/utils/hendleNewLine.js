@@ -20,6 +20,10 @@ function hendleNewLine(strArticle, callback) {
 		"<p data-aos='fade-up' data-aos-delay='100' class='text-justify my-2  text-[hsl(0,0%,83.1%)]' "
 	);
 	buffer = buffer.replace(
+		/<ol/g,
+		"<ul data-aos='fade-up' data-aos-delay='100' "
+	);
+	buffer = buffer.replace(
 		/<ul/g,
 		"<ul data-aos='fade-up' data-aos-delay='100' "
 	);

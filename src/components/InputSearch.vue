@@ -82,17 +82,8 @@
 
 <!-- template -->
 <template>
-	<div class="">
-		<form
-			class="flex gap-2 items-center relative"
-			action="search"
-			autocomplete="off"
-			role="presentation"
-			method="GET"
-			accept-charset="utf-8"
-		>
-			<input class="hidden" type="text" />
-			<!-- input -->
+	<div class="flex gap-2 items-center relative">
+		<section role="search" class="relative w-full">
 			<input
 				v-model="inputValue"
 				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-neutral-400 tracking-wide cursor-text shadow-md placeholder-[hsl(0,0%,63.9%)]"
@@ -102,7 +93,6 @@
 				@keyup="searchRequest()"
 				placeholder="Search articles here..."
 			/>
-			<!-- end input -->
 			<div
 				class="absolute top-3 right-3 text-zinc-300 grid grid-cols-1 grid-rows-1"
 			>
@@ -117,65 +107,65 @@
 					></i>
 				</Transition>
 			</div>
-			<!-- end input -->
+		</section>
+		<!-- end input -->
 
-			<!-- search viewer-->
-			<Transition>
-				<div
-					v-if="isSearchable"
-					class="w-full absolute rounded-lg top-14 overflow-hidden z-50 flex flex-col gap-1 bg-[hsla(0,0%,9%,0.6)] p-2 backdrop-blur-sm"
-				>
-					<section role="link" v-for="(info, index) in data">
-						<RouterLink
-							:to="'/page/' + info.pageid"
-							class="flex justify-between items-center gap-3 p-2 rounded-md bg-[hsl(0,0%,9%)]"
-							@click="
-								() => {
-									inputValue = '';
-									isViewerActive = false;
-								}
-							"
+		<!-- search viewer-->
+		<Transition>
+			<div
+				v-if="isSearchable"
+				class="w-full absolute rounded-lg top-14 overflow-hidden z-50 flex flex-col gap-1 bg-[hsla(0,0%,9%,0.6)] p-2 backdrop-blur-sm"
+			>
+				<section role="link" v-for="(info, index) in data">
+					<RouterLink
+						:to="'/page/' + info.pageid"
+						class="flex justify-between items-center gap-3 p-2 rounded-md bg-[hsl(0,0%,9%)]"
+						@click="
+							() => {
+								inputValue = '';
+								isSearchable = false;
+							}
+						"
+					>
+						<section rule="thumbnail">
+							<img
+								v-if="info.thumbnail"
+								class="w-14 h-10 rounded-md brightness-75"
+								:src="info.thumbnail.source"
+								alt="info.title"
+							/>
+							<img
+								v-if="!info.thumbnail"
+								class="w-14 h-10 rounded-md brightness-75"
+								src="/imageNotFound.png"
+								alt=""
+							/>
+						</section>
+						<section
+							rule="article info"
+							class="w-full h-fit overflow-hidden flex justify-between gap-2"
 						>
-							<section rule="thumbnail">
-								<img
-									v-if="info.thumbnail"
-									class="w-14 h-10 rounded-md brightness-75"
-									:src="info.thumbnail.source"
-									alt="info.title"
-								/>
-								<img
-									v-if="!info.thumbnail"
-									class="w-14 h-10 rounded-md brightness-75"
-									src="/imageNotFound.png"
-									alt=""
-								/>
-							</section>
-							<section
-								rule="article info"
-								class="w-full h-fit overflow-hidden flex justify-between gap-2"
-							>
-								<div>
-									<h1 class="text-[0.76rem] font-bold text-zinc-300">
-										{{ info.title }}
-									</h1>
-									<div class="text-[0.48rem]">
-										<span
-											class="inline text-zinc-300"
-											v-html="getFristText(info.extract)"
-										></span>
-										<span>...</span>
-									</div>
+							<div>
+								<h1 class="text-[0.76rem] font-bold text-zinc-300">
+									{{ info.title }}
+								</h1>
+								<div class="text-[0.48rem]">
+									<span
+										class="inline text-zinc-300"
+										v-html="getFristText(info.extract)"
+									></span>
+									<span>...</span>
 								</div>
-								<div class="flex items-center">
-									<i class="bi bi-box-arrow-up-right text-xs text-zinc-300"></i>
-								</div>
-							</section>
-						</RouterLink>
-					</section>
-				</div>
-			</Transition>
-			<!-- end search viewer-->
-		</form>
+							</div>
+							<div class="flex items-center">
+								<i class="bi bi-box-arrow-up-right text-xs text-zinc-300"></i>
+							</div>
+						</section>
+					</RouterLink>
+				</section>
+			</div>
+		</Transition>
+		<!-- end search viewer-->
 	</div>
 </template>
 

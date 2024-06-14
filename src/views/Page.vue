@@ -34,8 +34,7 @@
 			console.log(json);
 			console.log(json.query);
 			if (!json.query) {
-				router.push("/404");
-				console.log("hello");
+				isSearchable.value = false;
 			}
 			data.value = json.query.pages[route.params.id];
 
@@ -52,11 +51,16 @@
 	<main class="col-start-1 row-start-1 min-w-[100vw] max-w-[100vw]">
 		<!-- main -->
 		<section role="main" class="min-w-[100vw] max-w-[100vw]">
-			<section role="search" class="w-[90%] mx-auto mt-10">
+			<section role="search" class="w-[90%] mx-auto mt-10 md:w-[70vw]">
 				<InputSearch></InputSearch>
 			</section>
 			<!-- article -->
-			<Article :data="data" :extract="extract"></Article>
+			<Article
+				class="z-10"
+				:data="data"
+				:extract="extract"
+				:isSearchable="isSearchable"
+			></Article>
 			<!-- end article -->
 
 			<!-- utils -->

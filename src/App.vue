@@ -23,7 +23,7 @@
 	<LoadingContainer :isDomLoaded="isDomLoaded"></LoadingContainer>
 	<!-- end utilities-->
 	<!-- main components -->
-	<div class="min-h-screen flex flex-col justify-between">
+	<div class="min-h-screen flex flex-col justify-between lg:hidden">
 		<!-- container -->
 		<div class="">
 			<header>
@@ -46,6 +46,16 @@
 			</div>
 		</div>
 		<!-- end container -->
+	</div>
+
+	<div class="hidden flex justify-center items-center lg:block">
+		<div
+			class="w-[90%] h-[80vh] mx-auto my-5 flex flex-col items-center justify-center col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
+		>
+			<h1 class="mix-blend-difference text-4xl text-neutral-300 font-semibold">
+				Sorry dekstop version is in development
+			</h1>
+		</div>
 	</div>
 	<!-- end main components-->
 </template>

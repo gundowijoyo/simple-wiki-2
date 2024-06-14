@@ -1,18 +1,17 @@
 <!-- script -->
 <script setup>
-	const props = defineProps(["data", "extract"]);
+	const props = defineProps(["data", "extract", "isSearchable"]);
 </script>
 
 <!-- template -->
 <template>
 	<article
-		class="mt-10 w-[98vw] h-fit min-h-screen mx-auto text-sm p-2 rounded-xl overflow-hidden p-2 bg-[length:200vw_100vh] grid grid-cols-1 grid-rows-1"
-		style="background-image: url(&quot;/article-bg.jpg&quot;)"
+		class="mt-10 w-[98vw] h-fit min-h-screen mx-auto text-sm p-2 rounded-xl overflow-hidden bg-[length:200vw_100vh] grid grid-cols-1 grid-rows-1 relative bg-[hsla(0,0%,9.1%,0.2)] md:w-[70vw]"
 	>
 		<Transition>
 			<div
-				v-if="props.data.extract"
-				class="h-full w-full overflow-clip text-white overflow-x-hidden col-start-1 row-start-1"
+				v-if="props.data.extract && isSearchable"
+				class="h-full w-full overflow-clip text-white overflow-x-hidden col-start-1 row-start-1 z-50"
 			>
 				<section role="thumbnail">
 					<h2 class="text-3xl font-black text-neutral-300 text-center mt-5">
@@ -48,7 +47,10 @@
 			</div>
 
 			<!-- skeleton effect -->
-			<div v-else class="w-full h-screen col-start-1 row-start-1">
+			<div
+				v-else-if="!props.data.extract && isSearchable"
+				class="w-full h-screen col-start-1 row-start-1"
+			>
 				<div
 					class="w-full h-full bg-neutral-900 opacity-80 rounded-lg flex justify-center items-center animate-pulse"
 				>
@@ -59,6 +61,20 @@
 			</div>
 			<!-- end skeleton effect -->
 			<!-- 404 -->
+			<div
+				v-else
+				class="w-full h-full flex flex-col items-center justify-center col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
+			>
+				<h1
+					class="mix-blend-difference text-4xl text-neutral-300 font-semibold"
+				>
+					404
+				</h1>
+				<h1 class="mix-blend-difference text-xl text-neutral-300 font-semibold">
+					Not Found
+				</h1>
+			</div>
+			<!-- end 404 -->
 		</Transition>
 	</article>
 </template>

@@ -5,7 +5,7 @@
 
 <!-- template -->
 <template>
-	<nav class="w-full h-20 px-4 flex justify-between items-center">
+	<nav class="w-full h-20 px-4 flex justify-between items-center md:px-10">
 		<section role="title">
 			<h1
 				class="text-2xl font-black tracking-tighter diagonal-gr drop-shadow-2xl group cursor-pointer drop-shadow-md"

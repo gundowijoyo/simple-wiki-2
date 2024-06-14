@@ -16,35 +16,35 @@
 
 <!-- template -->
 <template>
-	<section role="fill of content">
-		<div
-			class="w-20 h-14 fixed bottom-10 right-8 flex items-center justify-evenly"
-		>
-			<button
-				class="relative bg-stone-900 w-12 h-12 rounded-full text-2xl transition-colors duration-500 flex justify-center items-center z-10"
-				type="button"
-				@click="isListOpen = !isListOpen"
-			>
-				<Transition name="dot">
-					<DotIcon v-if="!isListOpen" class="w-6 h-6 absolute"></DotIcon>
-					<CrossIcon v-else class="w-6 h-6 absolute"></CrossIcon>
-				</Transition>
-			</button>
-			<RouterLink
-				to="/"
-				class="absolute w-12 h-12 rounded-full bg-stone-900 transition-all duration-300 flex justify-center items-center"
-				:class="isListOpen ? 'translate-x-[-3.76rem]' : 'rotate-180 scale-50'"
-				onclick="window.scrollTo(0, 0)"
-			>
-				<HouseIcon class="w-6 h-6"></HouseIcon>
-			</RouterLink>
+	<section role="fill of content" class="fixed bottom-10 z-[100] w-screen">
+		<div class="w-[80vw] mx-auto flex justify-end md:w-[70vw]">
+			<div class="flex items-center justify-evenly z-[100]">
+				<button
+					class="relative bg-stone-900 w-12 h-12 rounded-full text-2xl transition-colors duration-500 flex justify-center items-center z-10"
+					type="button"
+					@click="isListOpen = !isListOpen"
+				>
+					<Transition name="dot">
+						<DotIcon v-if="!isListOpen" class="w-6 h-6 absolute"></DotIcon>
+						<CrossIcon v-else class="w-6 h-6 absolute"></CrossIcon>
+					</Transition>
+				</button>
+				<RouterLink
+					to="/"
+					class="absolute w-12 h-12 rounded-full bg-stone-900 transition-all duration-300 flex justify-center items-center"
+					:class="isListOpen ? 'translate-x-[-3.76rem]' : 'rotate-180 scale-50'"
+					onclick="window.scrollTo(0, 0)"
+				>
+					<HouseIcon class="w-6 h-6"></HouseIcon>
+				</RouterLink>
+			</div>
 		</div>
 
 		<!-- list -->
-		<section role="content list" class="fixed bottom-24 w-full h-fit">
+		<section role="content list" class="fixed bottom-24 w-full h-fit z-[100]">
 			<div
-				class="w-[80%] mx-auto bg-neutral-900 rounded-xl p-2 transition-all duration-500"
-				:class="isListOpen ? 'h-[20rem] ' : 'h-0 opacity-0'"
+				class="w-[80%] mx-auto bg-neutral-900 rounded-xl p-2 transition-all duration-500 md:w-[70vw]"
+				:class="isListOpen ? 'h-[20rem] md:h-[30rem]' : 'h-0 opacity-0'"
 			>
 				<div
 					v-if="headingList"
