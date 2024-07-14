@@ -23,9 +23,9 @@
 	<LoadingContainer :isDomLoaded="isDomLoaded"></LoadingContainer>
 	<!-- end utilities-->
 	<!-- main components -->
-	<div class="min-h-screen flex flex-col justify-between lg:hidden">
+	<div class="min-h-screen flex flex-col justify-between">
 		<!-- container -->
-		<div class="">
+		<div class="min-h-screen">
 			<header>
 				<NavHeader></NavHeader>
 			</header>
@@ -39,24 +39,87 @@
 			<!-- end router view -->
 		</div>
 		<!-- end container -->
+
 		<!-- container -->
-		<div class="">
-			<div class="w-screen h-20 text-white mt-10">
-				<h1 class="text-center">simplewiki</h1>
-			</div>
+		<div>
+			<footer class="w-screen min-h-[300px] mt-10">
+				<div class="md:w-[70vw] mx-auto p-5 text-[#cbcbcb]">
+					<section
+						role="logo"
+						class="w-full h-fit flex justify-start items-center gap-3"
+					>
+						<img class="w-8 aspect-square rounded-md" src="/logo.png" alt="" />
+						<h1
+							class="text-2xl font-semibold tracking-tighter drop-shadow-2xl group cursor-pointer drop-shadow-md"
+						>
+							Simple Wiki
+						</h1>
+					</section>
+					<p class="mt-2 leading-4">
+						<i>`More than creations just make new thinks`</i>
+						- nobody.
+					</p>
+					<p class="mt-5">Contact & Social media :</p>
+					<ul class="">
+						<li class="flex justify-between">
+							<p>Email</p>
+							<p>aryadewanggapuja@gmail.com</p>
+						</li>
+					</ul>
+					<section
+						role="sosial media"
+						class="w-auto h-full bg-[hsla(240,5.9%,4%,0.5)] rounded-xl flex mt-5 justify-evenly items-center text-xl text-[hsla(0,0%,70.1%,0.8)] md:text-2xl"
+					>
+						<a
+							class="cursor-pointer"
+							href="https://www.instagram.com/aryadewanggapuja"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="transition-colors duration-500 hover:text-[#080808]">
+								<i class="bi bi-instagram"></i>
+							</span>
+						</a>
+						<a
+							class="cursor-pointer"
+							href="https://www.facebook.com/aryadewanggapuja"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="transition-colors duration-500 hover:text-[#080808]">
+								<i class="bi bi-facebook"></i>
+							</span>
+						</a>
+						<a
+							class="cursor-pointer"
+							href="https://github.com/ka-shifuka"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="transition-colors duration-500 hover:text-[#080808]">
+								<i class="bi bi-github"></i>
+							</span>
+						</a>
+						<a
+							class="cursor-pointer"
+							href="https://www.threads.net/@aryadewanggapuja"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="transition-colors duration-500 hover:text-[#080808]">
+								<i class="bi bi-threads-fill"></i>
+							</span>
+						</a>
+					</section>
+					<div class="flex justify-center mt-10">
+						&copy; 2024 arya dewangga puja | creations
+					</div>
+				</div>
+			</footer>
 		</div>
 		<!-- end container -->
 	</div>
 
-	<div class="hidden flex justify-center items-center lg:block">
-		<div
-			class="w-[90%] h-[80vh] mx-auto my-5 flex flex-col items-center justify-center col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl"
-		>
-			<h1 class="mix-blend-difference text-4xl text-neutral-300 font-semibold">
-				Sorry dekstop version is in development
-			</h1>
-		</div>
-	</div>
 	<!-- end main components-->
 </template>
 
