@@ -1,5 +1,7 @@
 # simplewiki2
 Project simplewiki versi 2
+<img src="./public/thumbnail.jpg">
+
 
 ## how to install
 ```
