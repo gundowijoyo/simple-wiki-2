@@ -67,7 +67,7 @@
 		<section role="search" class="w-[90%] mx-auto md:w-[70vw]">
 			<input
 				v-model="inputValue"
-				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-neutral-400 tracking-wide cursor-text shadow-md placeholder-[hsl(0,0%,63.9%)]"
+				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-neutral-400 tracking-wide cursor-text border-2 border-[#cbcbcb] shadow-md placeholder-[hsl(0,0%,63.9%)]"
 				type="text"
 				id="input-2"
 				autocomplete="off"
@@ -79,7 +79,7 @@
 			<Transition>
 				<div
 					v-if="isLoad && isSearchable"
-					class="w-[90%] h-[80vh] max-h-[50rem] mx-auto my-5 flex flex-col justify-evenly col-start-1 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl md:w-[70vw]"
+					class="w-[90%] min-h-[80vh] mx-auto my-5 flex flex-col justify-evenly col-start-1 gap-2 row-start-1 bg-[hsla(0,0%,8%,0.6)] p-2 backdrop-blur-sm rounded-xl md:w-[70vw]"
 				>
 					<section v-for="(info, index) in data">
 						<!-- router link -->

@@ -86,7 +86,7 @@
 		<section role="search" class="relative w-full">
 			<input
 				v-model="inputValue"
-				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-neutral-400 tracking-wide cursor-text shadow-md placeholder-[hsl(0,0%,63.9%)]"
+				class="h-12 w-full text-sm w-full p-4 outline-none rounded-lg bg-[hsl(0,0%,7%)] text-neutral-400 tracking-wide cursor-text shadow-md placeholder-[hsl(0,0%,63.9%)] border-2 border-[#cbcbcb]"
 				type="text"
 				id="input-1"
 				autocomplete="off"

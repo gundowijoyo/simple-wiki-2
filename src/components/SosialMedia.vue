@@ -13,7 +13,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<span class="transition-colors duration-500 hover:text-[#080808]">
+			<span class="transition-colors duration-300 hover:text-[#656565]">
 				<i class="bi bi-instagram"></i>
 			</span>
 		</a>
@@ -23,7 +23,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<span class="transition-colors duration-500 hover:text-[#080808]">
+			<span class="transition-colors duration-300 hover:text-[#656565]">
 				<i class="bi bi-facebook"></i>
 			</span>
 		</a>
@@ -33,7 +33,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<span class="transition-colors duration-500 hover:text-[#080808]">
+			<span class="transition-colors duration-300 hover:text-[#656565]">
 				<i class="bi bi-github"></i>
 			</span>
 		</a>
@@ -43,8 +43,9 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<span class="transition-colors duration-500 hover:text-[#080808]">
-<i class="bi bi-threads-fill"></i>			</span>
+			<span class="transition-colors duration-300 hover:text-[#656565]">
+				<i class="bi bi-threads-fill"></i>
+			</span>
 		</a>
 	</section>
 </template>

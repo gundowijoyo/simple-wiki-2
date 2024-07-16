@@ -59,16 +59,11 @@
 						<i>`More than creations just make new thinks`</i>
 						- nobody.
 					</p>
-					<p class="mt-5">Contact & Social media :</p>
-					<ul class="">
-						<li class="flex justify-between">
-							<p>Email</p>
-							<p>aryadewanggapuja@gmail.com</p>
-						</li>
-					</ul>
+					<p class="my-5">Contact & Social media :</p>
+					<!-- social media -->
 					<section
 						role="sosial media"
-						class="w-auto h-full bg-[hsla(240,5.9%,4%,0.5)] rounded-xl flex mt-5 justify-evenly items-center text-xl text-[hsla(0,0%,70.1%,0.8)] md:text-2xl"
+						class="w-auto h-full bg-[hsla(240,5.9%,4%,0.5)] rounded-xl flex justify-evenly items-center text-xl text-[hsla(0,0%,70.1%,0.8)] md:text-2xl"
 					>
 						<a
 							class="cursor-pointer"
@@ -76,7 +71,17 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<span class="transition-colors duration-500 hover:text-[#080808]">
+							<span class="transition-colors duration-300 hover:text-[#656565]">
+								<i class="bi bi-envelope-at-fill"></i>
+							</span>
+						</a>
+						<a
+							class="cursor-pointer"
+							href="https://www.instagram.com/aryadewanggapuja"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="transition-colors duration-300 hover:text-[#656565]">
 								<i class="bi bi-instagram"></i>
 							</span>
 						</a>
@@ -86,7 +91,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<span class="transition-colors duration-500 hover:text-[#080808]">
+							<span class="transition-colors duration-300 hover:text-[#656565]">
 								<i class="bi bi-facebook"></i>
 							</span>
 						</a>
@@ -96,7 +101,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<span class="transition-colors duration-500 hover:text-[#080808]">
+							<span class="transition-colors duration-300 hover:text-[#656565]">
 								<i class="bi bi-github"></i>
 							</span>
 						</a>
@@ -106,12 +111,12 @@
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<span class="transition-colors duration-500 hover:text-[#080808]">
+							<span class="transition-colors duration-300 hover:text-[#656565]">
 								<i class="bi bi-threads-fill"></i>
 							</span>
 						</a>
 					</section>
-					<div class="flex justify-center mt-10">
+					<div class="flex justify-center mt-10 text-sm">
 						&copy; 2024 arya dewangga puja | creations
 					</div>
 				</div>
