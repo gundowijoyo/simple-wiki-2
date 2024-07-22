@@ -1,5 +1,7 @@
 # simplewiki2
 Project simplewiki versi 2
+ini hanya static web yang mengkonsumsi API dari wikipedia
+
 <img src="./public/thumbnail.jpg">
 
 
