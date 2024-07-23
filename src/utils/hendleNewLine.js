@@ -31,6 +31,7 @@ function hendleNewLine(strArticle, callback) {
 		/<dl/g,
 		"<dl data-aos='fade-up' data-aos-delay='100' "
 	);
+	console.log(buffer)
 
 	const regex = /<span id="(\w+)"/g;
 	const matches = buffer.matchAll(regex);

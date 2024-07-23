@@ -38,10 +38,8 @@
 						>
 							Pengenalan
 						</h3>
-						<div
-							v-html="props.extract"
-							class="text-s mx-1 text-neutral-300"
-						></div>
+						<div v-html="props.extract" class="text-s mx-1 text-neutral-300">
+						</div>
 					</div>
 				</section>
 			</div>

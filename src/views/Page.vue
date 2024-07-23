@@ -1,7 +1,6 @@
 <!-- script -->
 <script setup>
 	import InputSearch from "../components/InputSearch.vue";
-	import ListOfHeading from "../components/ListOfHeading.vue";
 	import Article from "../components/Article.vue";
 	import { hendleNewLine } from "../utils/index.js";
 	import { queryByPageId } from "../api/index.js";
@@ -62,13 +61,6 @@
 				:isSearchable="isSearchable"
 			></Article>
 			<!-- end article -->
-
-			<!-- utils -->
-			<ListOfHeading
-				v-if="data.extract"
-				:headingList="headingList"
-			></ListOfHeading>
-			<!-- end utils -->
 		</section>
 		<!-- end main -->
 	</main>
