@@ -25,7 +25,10 @@
 		let input = document.getElementById("input-1");
 		input.addEventListener("keyup", e => {
 			if (e.key == "Enter" && input.value.split(" ").join("") != "") {
-				router.push({ path: "/search", query: { q: input.value } });
+				router.push({
+					path: "/simplewiki-page/search",
+					query: { q: input.value }
+				});
 			}
 		});
 

@@ -84,7 +84,7 @@
 					<section v-for="(info, index) in data">
 						<!-- router link -->
 						<RouterLink
-							:to="'/page/' + info.pageid"
+							:to="'/simplewiki-page/page/' + info.pageid"
 							class="flex justify-between items-center gap-3 p-2 rounded-md cursor-pointer bg-[hsl(0,0%,8%)]"
 						>
 							<section role="thumbnail">

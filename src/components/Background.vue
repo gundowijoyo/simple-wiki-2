@@ -1,7 +1,6 @@
 <!-- script -->
 <script setup>
 	import { onMounted } from "vue";
-	import images from "./BackgroundImages/index.js";
 
 	onMounted(() => {
 		// get all element of images background
@@ -42,8 +41,15 @@
 	>
 		<img
 			class="background transition-all duration-1000 w-screen h-screen row-start-1 col-start-1 select-none md:w-full md:h-full"
-			v-for="image in images"
-			:src="image"
+			src="/BackgroundImages/images_4.jpeg"
+		/>
+		<img
+			class="background transition-all duration-1000 w-screen h-screen row-start-1 col-start-1 select-none md:w-full md:h-full"
+			src="/BackgroundImages/images_5.jpeg"
+		/>
+		<img
+			class="background transition-all duration-1000 w-screen h-screen row-start-1 col-start-1 select-none md:w-full md:h-full"
+			src="/BackgroundImages/images_8.jpeg"
 		/>
 
 		<div

@@ -36,6 +36,7 @@
 				isSearchable.value = false;
 			}
 			data.value = json.query.pages[route.params.id];
+			console.log(data.value)
 
 			hendleNewLine(data.value.extract, (result, ids) => {
 				extract.value = result;

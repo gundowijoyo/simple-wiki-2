@@ -5,22 +5,22 @@ const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		{
-			path: "/",
+			path: "/simplewiki-page",
 			name: "home",
 			component: HomeView
 		},
 		{
-			path: "/page/:id",
+			path: "/simplewiki-page/page/:id",
 			name: "page",
 			component: () => import("../views/Page.vue")
 		},
 		{
-			path: "/search",
+			path: "/simplewiki-page/search",
 			name: "search",
 			component: () => import("../views/Search.vue")
 		},
 		{
-			path: "/:pathMatch(.*)*",
+			path: "/simplewiki-page/:pathMatch(.*)*",
 			name: "notfound",
 			component: () => import("../views/NotFound.vue")
 		}
