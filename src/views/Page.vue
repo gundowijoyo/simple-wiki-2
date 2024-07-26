@@ -2,6 +2,7 @@
 <script setup>
 	import InputSearch from "../components/InputSearch.vue";
 	import Article from "../components/Article.vue";
+	import ListOfHeading from "../components/ListOfHeading.vue"
 	import { hendleNewLine } from "../utils/index.js";
 	import { queryByPageId } from "../api/index.js";
 	import { useRoute, useRouter } from "vue-router";
@@ -60,6 +61,8 @@
 				:extract="extract"
 				:isSearchable="isSearchable"
 			></Article>
+			
+			<ListOfHeading :headingList="headingList"></ListOfHeading>
 			<!-- end article -->
 		</section>
 		<!-- end main -->

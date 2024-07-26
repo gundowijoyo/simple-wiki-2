@@ -33,7 +33,7 @@ function hendleNewLine(strArticle, callback) {
 	);
 	console.log(buffer)
 
-	const regex = /<span id="(\w+)"/g;
+	const regex = / id="(\w+)"/g;
 	const matches = buffer.matchAll(regex);
 	const ids = [...matches].map(m => m[1]);
 
